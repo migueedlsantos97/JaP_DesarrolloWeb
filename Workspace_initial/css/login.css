@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10%;
+  margin: 0;
+  font-family: sans-serif;
+}
+.img-header {
+  width: 100%;
+  height: 40px;
+}
+.form {
+  width: 500px;
+  max-width: 500px;
+  margin-top: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.form h1 {
+  text-align: center;
+  padding-bottom: 40px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.form-input,
+.form-label {
+  width: 100%;
+  font-size: 1.3em;
+}
+.form-submit {
+  width: 30%;
+  font-size: 1.3em;
+  border-radius: 50px;
+}
+
+.form-input {
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #d61c6c;
+  border-radius: 50px;
+  margin-bottom: 40px;
+}
+
+.form-input:focus {
+  outline: 1px solid #d61c6c;
+}
+
+.form-input:focus + .form-label {
+  margin-top: -125px;
+}
+
+.form-label {
+  padding-left: 15px;
+  position: absolute;
+  margin-top: -85px;
+  z-index: -20;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.form-submit {
+  background-color: #d61c6c;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.fijar {
+  margin-top: -80px;
+}
