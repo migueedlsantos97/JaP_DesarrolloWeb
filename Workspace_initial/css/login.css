@@ -8,6 +8,7 @@ body {
   font-family: sans-serif;
 }
 .img-header {
+  flex-wrap: wrap;
   width: 100%;
   height: 40px;
 }
