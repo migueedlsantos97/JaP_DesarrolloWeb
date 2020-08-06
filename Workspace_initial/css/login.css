@@ -71,6 +71,8 @@ body {
   background-color: #d61c6c;
   color: white;
   padding: 10px 20px;
+  margin: auto;
+  display: block;
   cursor: pointer;
   border: none;
 }
