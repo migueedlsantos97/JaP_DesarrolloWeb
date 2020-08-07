@@ -19,24 +19,35 @@
       rel="stylesheet"
     />
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
   </head>
   <body>
     <div class="img-header">
-      <img src="img/ceibal-jap.png" />
-      <img src="img/ecommerce.png" />
+      <img src="img/login-2.png" height="120px" />
     </div>
     <div class="form-login">
       <form class="form">
         <h1 class="form-titulo">Inicio de sesión</h1>
-        <input type="text" class="form-input" />
-        <label for="" class="form-label">Usuario</label>
-        <input type="password" class="form-input" />
+        <label for="" class="form-label">Correo Electrónico</label>
+        <input
+          type="email"
+          class="form-input"
+          placeholder="ejemplo@ejemplo.com"
+          required
+        />
         <label for="" class="form-label">Contraseña</label>
+        <input type="password" maxlength="8" class="form-input" required />
+        <div class="ckeckbox">
+          <label>
+            <input type="checkbox" value="Recuerdame" />
+            Recuérdame
+          </label>
+        </div>
         <input class="form-submit" type="submit" value="Ingresar" />
       </form>
+      <p>© Plan Ceibal - 2020</p>
     </div>
 
     <script src="js/init.js"></script>
