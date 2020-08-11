@@ -1,56 +1,77 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <title>eMercado - Todo lo que busques está aquí</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
     <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.3/examples/album/"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
       rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
     />
-    <!-- Bootstrap core CSS -->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <div class="img-header">
-      <img src="img/login-2.png" height="120px" />
-    </div>
-    <div class="form-login">
-      <form class="form">
-        <h1 class="form-titulo">Inicio de sesión</h1>
-        <label for="" class="form-label">Correo Electrónico</label>
-        <input
-          type="email"
-          class="form-input"
-          placeholder="ejemplo@ejemplo.com"
-          required
-        />
-        <label for="" class="form-label">Contraseña</label>
-        <input type="password" maxlength="8" class="form-input" required />
-        <div class="ckeckbox">
-          <label>
-            <input type="checkbox" value="Recuerdame" />
-            Recuérdame
-          </label>
+    <main>
+      <form action="" class="formulario" id="formulario">
+        <div>
+          <h1>Inicio de sesión</h1>
         </div>
-        <input class="form-submit" type="submit" value="Ingresar" />
+        <!-- Grupo: Usuario -->
+        <div class="formulario__grupo" id="grupo__usuario">
+          <label for="usuario" class="formulario__label">Usuario</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="usuario"
+              id="usuario"
+              placeholder="john123"
+            />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
+        </div>
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+          <label for="password" class="formulario__label">Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password"
+              id="password"
+              placeholder="Ingrese su contraseña"
+            />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">
+            La contraseña debe contener entre 4 a 12 dígitos.
+          </p>
+        </div>
+        <!--Advertencia de campos vacíos-->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Complete
+            todos los campos
+          </p>
+        </div>
+        <!--Botón "Enviar"-->
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+          <button type="submit" class="formulario__btn">Enviar</button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+            Datos enviados correctamente!
+          </p>
+        </div>
       </form>
-      <p>© Plan Ceibal - 2020</p>
-    </div>
+    </main>
 
-    <script src="js/init.js"></script>
     <script src="js/login.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2c36e9b7b1.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
