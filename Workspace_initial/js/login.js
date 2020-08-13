@@ -96,3 +96,4 @@ formulario.addEventListener("submit", (e) => {
       .classList.add("formulario__mensaje-activo");
   }
 });
+
