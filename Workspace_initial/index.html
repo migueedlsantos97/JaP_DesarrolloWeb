@@ -1,165 +1,83 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <title>eMercado - Todo lo que busques está aquí</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario │ Inicio</title>
     <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.3/examples/album/"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
       rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
     />
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between"
-      >
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html"
-          >Categorías</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="products.html"
-          >Productos</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      </div>
-    </nav>
-    <main role="main">
-      <section class="jumbotron text-center">
-        <div class="m-5">
-          <h1></h1>
+    <main>
+      <form action="" class="formulario" id="formulario">
+        <div>
+          <h1>Inicio de sesión</h1>
         </div>
-      </section>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cat1.jpg"
-                />
-                <h3 class="m-3">Autos (122)</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Los mejores precios en autos 0 kilómetro, de alta y media
-                    gama.
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cat2.jpg"
-                />
-                <h3 class="m-3">Juguetes (354)</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Encuentra aquí los mejores precios para niños/as de
-                    cualquier edad.
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cat3.jpg"
-                />
-                <h3 class="m-3">Muebles (157)</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Muebles antiguos, nuevos y para ser armados por uno mismo.
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cat4.jpg"
-                />
-                <h3 class="m-3">Herramientas (452)</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Herramientas para cualquier tipo de trabajo.
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cat5.jpg"
-                />
-                <h3 class="m-3">Computadoras (724)</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Todo en cuanto a computadoras, para uso de oficina y/o
-                    juegos.
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cat6.jpg"
-                />
-                <h3 class="m-3">Vestimenta (841)</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Gran variedad de ropa, nueva y de segunda mano.
-                  </p>
-                </div>
-              </a>
-            </div>
+        <!-- Grupo: Usuario -->
+        <div class="formulario__grupo" id="grupo__usuario">
+          <label for="usuario" class="formulario__label">Usuario</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="usuario"
+              id="usuario"
+              placeholder="john123"
+            />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <div class="row">
-            <a
-              type="button"
-              class="btn btn-light btn-lg btn-block"
-              href="categories.html"
-              >Ver todas</a
-            >
-          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
         </div>
-      </div>
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+          <label for="password" class="formulario__label">Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password"
+              id="password"
+              placeholder="Ingrese su contraseña"
+            />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">
+            La contraseña debe contener entre 4 a 12 dígitos.
+          </p>
+        </div>
+        <!--Advertencia de campos vacíos-->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Complete
+            todos los campos
+          </p>
+        </div>
+        <!--Botón "Enviar"-->
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+          <button
+            type="submit"
+            class="formulario__btn"
+            onclick="window.location='inicio.html'"
+          >
+            Enviar
+          </button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+            Datos enviados correctamente!
+          </p>
+        </div>
+      </form>
     </main>
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>
-          Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
-          letra del obligatorio.
-        </p>
-      </div>
-    </footer>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
+
+    <script src="js/login.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2c36e9b7b1.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
