@@ -98,5 +98,11 @@ formulario.addEventListener("submit", (e) => {
 });
 
 //LOCALSTORAGE: Guarda cadenas de texto a traves de, clave => valor
-const nombreUsuario = "Miguel_97"
-localStorage.setItem("user", nombreUsuario);
+//const nombreUsuario = "Miguel_97"
+//localStorage.setItem("user", nombreUsuario);
+
+function submitLogin(event) {
+  event.preventDefault();
+  ocultarLogin();
+  localStorage.setItem("logueado", "true");
+}
