@@ -101,8 +101,8 @@ formulario.addEventListener("submit", (e) => {
 //const nombreUsuario = "Miguel_97"
 //localStorage.setItem("user", nombreUsuario);
 
-function submitLogin(event) {
+/*function submitLogin(event) {
   event.preventDefault();
   ocultarLogin();
   localStorage.setItem("logueado", "true");
-}
+}*/

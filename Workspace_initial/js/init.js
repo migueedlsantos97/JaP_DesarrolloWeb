@@ -51,7 +51,7 @@ var getJSONData = function (url) {
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {});
 
-document.addEventListener("DOMContentLoaded", function (e) {
+/*document.addEventListener("DOMContentLoaded", function (e) {
   if (sessionStorage.getItem("logeado") != "true") {
     document.getElementById("pantalla-login").classList.remove("login-hidden");
   }
@@ -59,4 +59,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 function ocultarLogin() {
   document.getElementById("pantalla-login").classList.add("login-hidden");
-}
+}*/
