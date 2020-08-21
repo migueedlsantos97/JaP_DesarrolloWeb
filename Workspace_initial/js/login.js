@@ -27,6 +27,15 @@ const validarFormulario = (e) => {
       validarCampo(expresiones.password, e.target, "password");
       break;
   }
+  if (usuario === "" || password === "") {
+    alert("Debe ingresar usuario y contraseña");
+    return false;
+  } else {
+    logueado = "true";
+    localStorage.setItem("estaLogueado", logueado);
+    localStorage.setItem("user", usuario);
+    window.location.replace("./index.html");
+  }
 };
 //si los campos son correctos aparece la "palomita verde", sino, aparece la "x roja".
 const validarCampo = (expresion, input, campo) => {
@@ -98,5 +107,17 @@ formulario.addEventListener("submit", (e) => {
 });
 
 //LOCALSTORAGE: Guarda cadenas de texto a traves de, clave => valor
-const nombreUsuario = 
-localStorage.setItem("user", nombreUsuario);
+/*function validate() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username === "" || password === "") {
+    alert("Debe ingresar usuario y contraseña");
+    return false;
+  } else {
+    logueado = "true";
+    localStorage.setItem("estaLogueado", logueado);
+    localStorage.setItem("user", username);
+    window.location.replace("./index.html");
+  }
+}*/
