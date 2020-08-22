@@ -34,7 +34,7 @@ const validarFormulario = (e) => {
     logueado = "true";
     localStorage.setItem("estaLogueado", logueado);
     localStorage.setItem("user", usuario);
-    window.location.replace("./index.html");
+    //window.location.replace("./index.html");
   }
 };
 //si los campos son correctos aparece la "palomita verde", sino, aparece la "x roja".

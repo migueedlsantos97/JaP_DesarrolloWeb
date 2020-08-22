@@ -44,14 +44,12 @@
           aria-haspopup="true"
           aria-expanded="false"
           id="user-a"
-        >
-          <script>
-            document.getElementById("usuario").innerHTML = localStorage.getItem(
-              "usern"
+          ><script>
+            document.getElementById("user-a").innerHTML = localStorage.getItem(
+              "user"
             );
           </script>
         </a>
-
         <div class="dropdown-menu">
           <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
           <a class="dropdown-item" href="#">Mis Compras</a>
@@ -61,8 +59,28 @@
             >Cerrar Sesión</a
           >
         </div>
+        <!--Icono de búsqueda-->
+        <div id="ctn-icon-search">
+          <i class="fas fa-search" id="icon-search"></i>
+        </div>
       </div>
     </nav>
+    <!--Barra de búsqueda-->
+    <div id="ctn-bars-search">
+      <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+    </div>
+    <!--Cuadro de resultados-->
+    <ul id="box-search">
+      <li>
+        <a href="#"><i class="fas fa-search"></i>Autos</a>
+        <a href="#"><i class="fas fa-search"></i>Juguetes</a>
+        <a href="#"><i class="fas fa-search"></i>Muebles</a>
+        <a href="#"><i class="fas fa-search"></i>Herramientas</a>
+        <a href="#"><i class="fas fa-search"></i>Computadoras</a>
+        <a href="#"><i class="fas fa-search"></i>Vestimenta</a>
+      </li>
+    </ul>
+    <div id="cover-ctn-search"></div>
     <main role="main">
       <section class="jumbotron text-center">
         <div class="m-5">
@@ -183,9 +201,11 @@
         </p>
       </div>
     </footer>
+    <script src="https://kit.fontawesome.com/35db202371.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/bar-search.js"></script>
   </body>
 </html>
