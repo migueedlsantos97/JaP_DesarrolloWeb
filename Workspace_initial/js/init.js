@@ -46,17 +46,15 @@ var getJSONData = function (url) {
     });
 };
 
+function cerrarSesion() {
+  localStorage.removeItem("user");
+  alert(
+    "Esperemos vuelva pronto para disfrutar de más productos y obtener increíbles ofertas!!", e-comerce
+  );
+  window.location.replace("./login.html");
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {});
-
-/*document.addEventListener("DOMContentLoaded", function (e) {
-  if (sessionStorage.getItem("logeado") != "true") {
-    document.getElementById("pantalla-login").classList.remove("login-hidden");
-  }
-});
-
-function ocultarLogin() {
-  document.getElementById("pantalla-login").classList.add("login-hidden");
-}*/

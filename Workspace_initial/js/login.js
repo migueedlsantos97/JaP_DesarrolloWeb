@@ -33,7 +33,7 @@ const validarFormulario = (e) => {
   } else {
     logueado = "true";
     localStorage.setItem("estaLogueado", logueado);
-    localStorage.setItem("user", usuario);
+    localStorage.setItem("user", usuario.value);
     //window.location.replace("./index.html");
   }
 };
@@ -105,19 +105,3 @@ formulario.addEventListener("submit", (e) => {
       .classList.add("formulario__mensaje-activo");
   }
 });
-
-//LOCALSTORAGE: Guarda cadenas de texto a traves de, clave => valor
-/*function validate() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  if (username === "" || password === "") {
-    alert("Debe ingresar usuario y contraseña");
-    return false;
-  } else {
-    logueado = "true";
-    localStorage.setItem("estaLogueado", logueado);
-    localStorage.setItem("user", username);
-    window.location.replace("./index.html");
-  }
-}*/

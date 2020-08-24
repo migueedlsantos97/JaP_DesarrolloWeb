@@ -51,6 +51,14 @@
   font-size: 38px;
 }
 
+#profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: auto;
+  margin: auto;
+}
+
 /*Buscador de contenido*/
 #ctn-icon-search {
   position: absolute;
