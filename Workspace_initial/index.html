@@ -23,47 +23,68 @@
     <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between"
-      >
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html"
-          >Categorías</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="products.html"
-          >Productos</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <!--Foto de perfil
-        <div class="img-profile">
-          <img id="profile" src="img/profile.jpg" alt="luismiguel" srcset="" />
-        </div>
-        <!--Menú desplegable (acceso a cuenta y más)-->
-        <a
-          class="nav-link dropdown-toggle"
-          data-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-haspopup="true"
-          aria-expanded="false"
-          id="user-a"
-          ><script>
-            document.getElementById("user-a").innerHTML = localStorage.getItem(
-              "user"
-            );
-          </script>
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-          <a class="dropdown-item" href="#">Mis Compras</a>
-          <a class="dropdown-item" href="cart.html">Carrito</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" onclick="cerrarSesion()"
-            >Cerrar Sesión</a
-          >
-        </div>
+    <nav class="site-header">
+      <div class="container">
+        <ul class="list">
+          <li>
+            <a
+              class="py-2 d-none d-md-inline-block"
+              id="active"
+              href="index.html"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="categories.html"
+              >Categorías</a
+            >
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="products.html"
+              >Productos</a
+            >
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="cart.html"
+              >Mi carrito</a
+            >
+          </li>
+          <!--Foto de perfil
+          <div class="img-profile">
+            <img id="profile" src="img/profile.jpg" alt="luismiguel" srcset="" />
+          </div>
+          <!--Menú desplegable (acceso a cuenta y más)-->
+          <a
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="user-a"
+            ><script>
+              document.getElementById(
+                "user-a"
+              ).innerHTML = localStorage.getItem("user");
+            </script>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+            <a class="dropdown-item" href="#">Mis Compras</a>
+            <a class="dropdown-item" href="cart.html">Carrito</a>
+            <div class="dropdown-divider"></div>
+            <a
+              class="dropdown-item"
+              id="c-sesion"
+              href="#"
+              onclick="cerrarSesion()"
+              >Cerrar Sesión</a
+            >
+          </div>
+        </ul>
         <!--Icono de búsqueda-->
         <div id="ctn-icon-search">
           <i class="fas fa-search" id="icon-search"></i>
@@ -75,7 +96,7 @@
       <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
     </div>
     <!--Inicio del Contenido de la página-->
-    <main role="main">
+    <main role="main" class="main">
       <section class="jumbotron text-center">
         <div class="m-5">
           <h1></h1>
@@ -201,5 +222,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/nav-classActive.js"></script>
   </body>
 </html>

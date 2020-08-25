@@ -41,46 +41,79 @@
     <link href="css/dropzone.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between"
-      >
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html"
-          >Categorías</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="products.html"
-          >Productos</a
-        >
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a
-          class="nav-link dropdown-toggle"
-          data-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-haspopup="true"
-          aria-expanded="false"
-          id="user-a"
-        >
-          <script>
-            document.getElementById("user-a").innerHTML = localStorage.getItem(
-              "user"
-            );
-          </script>
-        </a>
-
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-          <a class="dropdown-item" href="#">Mis Compras</a>
-          <a class="dropdown-item" href="cart.html">Carrito</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" onclick="cerrarSesion()"
-            >Cerrar Sesión</a
-          >
+    <nav class="site-header">
+      <div class="container">
+        <ul class="list">
+          <li>
+            <a
+              class="py-2 d-none d-md-inline-block"
+              id="active"
+              href="index.html"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="categories.html"
+              >Categorías</a
+            >
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="products.html"
+              >Productos</a
+            >
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+          </li>
+          <li>
+            <a class="py-2 d-none d-md-inline-block" href="cart.html"
+              >Mi carrito</a
+            >
+          </li>
+          <!--Foto de perfil
+          <div class="img-profile">
+            <img id="profile" src="img/profile.jpg" alt="luismiguel" srcset="" />
+          </div>
+          <!--Menú desplegable (acceso a cuenta y más)-->
+          <a
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="user-a"
+            ><script>
+              document.getElementById(
+                "user-a"
+              ).innerHTML = localStorage.getItem("user");
+            </script>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+            <a class="dropdown-item" href="#">Mis Compras</a>
+            <a class="dropdown-item" href="cart.html">Carrito</a>
+            <div class="dropdown-divider"></div>
+            <a
+              class="dropdown-item"
+              id="c-sesion"
+              href="#"
+              onclick="cerrarSesion()"
+              >Cerrar Sesión</a
+            >
+          </div>
+        </ul>
+        <!--Icono de búsqueda-->
+        <div id="ctn-icon-search">
+          <i class="fas fa-search" id="icon-search"></i>
         </div>
       </div>
     </nav>
+    <!--Barra de búsqueda
+    <div id="ctn-bars-search">
+      <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+    </div>
+    <!--Inicio del Contenido de la página-->
     <div class="container">
       <div class="text-center p-4">
         <h2>Vender</h2>
@@ -260,7 +293,7 @@
                 class="list-group-item d-flex justify-content-between lh-condensed"
               >
                 <div>
-                  <h6 class="my-0">P0rcentaje</h6>
+                  <h6 class="my-0">Porcentaje</h6>
                   <small class="text-muted">Según el tipo de publicación</small>
                 </div>
                 <span class="text-muted" id="comissionText">-</span>
@@ -361,5 +394,6 @@
     <script src="js/dropzone.js"></script>
     <script src="js/init.js"></script>
     <script src="js/sell.js"></script>
+    <script src="js/nav-classActive.js"></script>
   </body>
 </html>
