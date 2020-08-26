@@ -11,3 +11,5 @@ enlaces.forEach((element) => {
     event.target.classList.add("active");
   });
 });
+
+//Averiguar porque en realidad no es un classList sino que tengo un Id como "active"
