@@ -2,15 +2,6 @@
   box-sizing: border-box;
 }
 
-/* ----- VIDEO-BACKGROUND ----- */
-/*video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}*/
 body {
   background: linear-gradient(
     227deg,
@@ -94,6 +85,7 @@ main {
 }
 
 .formulario__input-error {
+  font-family: "Segoe UI";
   font-size: 12px;
   margin-bottom: 0;
   display: none;
