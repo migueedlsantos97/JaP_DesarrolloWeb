@@ -157,7 +157,7 @@ main {
   display: block;
 }
 
-/* ----- -----  Estilos para Validacion ----- ----- */
+/* ----- Estilos para Validacion ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
   color: #1ed12d;
   opacity: 1;
@@ -176,7 +176,7 @@ main {
   border: 3px solid #bb2929;
 }
 
-/* ----- -----  Mediaqueries ----- ----- */
+/* ----- Mediaqueries ----- */
 
 @media screen and (max-width: 800px) {
   .formulario {
@@ -193,7 +193,7 @@ main {
     width: 100%;
   }
 }
-/* ----- -----  Keyframes ----- ----- */
+/* ----- Keyframes ----- */
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 50% 0%;
