@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-MERCADO | Iniciar Sesión</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <main>
+      <form class="formulario" id="formulario">
+        <div>
+          <h1>Inicio de sesión</h1>
+        </div>
+        <!-- Grupo: Usuario -->
+        <div class="formulario__grupo" id="grupo__usuario">
+          <label for="usuario" class="formulario__label">Usuario</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="usuario"
+              id="usuario"
+              placeholder="john123"
+            />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
+        </div>
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+          <label for="password" class="formulario__label">Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password"
+              id="password"
+              placeholder="Ingrese su contraseña"
+            />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">
+            La contraseña debe contener entre 4 a 12 dígitos.
+          </p>
+        </div>
+        <!--Advertencia de campos vacíos-->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Complete
+            todos los campos
+          </p>
+        </div>
+        <!--Botón "Enviar"-->
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+          <button
+            type="submit"
+            class="formulario__btn"
+            onclick="window.location='index.html'"
+          >
+            Enviar
+          </button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+            <b>Datos enviados correctamente!</b>
+          </p>
+        </div>
+      </form>
+      <div class="copyright">
+        <p class="footer-text">©PlanCeibal - Jovenes a Programar</p>
+      </div>
+    </main>
+
+    <script src="js/login.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2c36e9b7b1.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
