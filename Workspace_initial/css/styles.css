@@ -112,7 +112,25 @@
 .site-header .container ul {
   display: flex;
   width: 100%;
+  align-items: center;
 }
+.icono-eMERCADO {
+  display: flex;
+  text-align: center;
+  margin-left: -200px;
+  margin-right: 50px;
+}
+.icono-eMERCADO img {
+  font-size: 40px;
+}
+.icono-eMERCADO p {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  margin: 0;
+  padding: 10px;
+}
+
 .site-header .container ul li {
   list-style: none;
 }
@@ -244,7 +262,6 @@ footer p {
 #bg-footer {
   background-color: #344059 !important;
 }
-/*background-color: #c7d1d9;*/
 
 .product-search {
   width: 100%;
