@@ -1,7 +1,7 @@
 // Navegation Menu
 let btnMenu = document.querySelector(".btn-menu");
 let barIconX = document.querySelector(".btn-menu i");
-let menu = document.querySelector(".list-container");
+let menu = document.querySelector(".container");
 let menuContent = document.querySelector(".site-header");
 var activador = true;
 

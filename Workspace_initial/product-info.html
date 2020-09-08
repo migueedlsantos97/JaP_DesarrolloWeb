@@ -1,159 +1,224 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/4.3/examples/album/"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-  <body>
-    <!-- Ir Arriba -->
-    <div class="go-top">
-      <span class="fas fa-angle-up"></span>
-    </div>
-    <nav class="site-header">
-      <div class="container">
-        <ul class="list">
-          <div class="icono-eMERCADO">
-            <img
-              src="/img/android-chrome-512x512.svg"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <p><b>e-MERCADO</b></p>
-          </div>
-          <li>
-            <a class="active" href="index.html">Inicio</a>
-          </li>
-          <li>
-            <a href="categories.html">Categorías</a>
-          </li>
-          <li>
-            <a href="products.html">Productos</a>
-          </li>
-          <li>
-            <a href="sell.html">Vender</a>
-          </li>
-          <li>
-            <a href="cart.html">Mi carrito</a>
-          </li>
-          <!--Foto de perfil
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Ir Arriba -->
+  <div class="go-top">
+    <span class="fas fa-angle-up"></span>
+  </div>
+  <nav class="site-header">
+    <div class="container">
+      <ul class="list">
+        <div class="icono-eMERCADO">
+          <img src="/img/android-chrome-512x512.svg" width="40" height="40" loading="lazy" />
+          <p><b>e-MERCADO</b></p>
+        </div>
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="categories.html">Categorías</a>
+        </li>
+        <li>
+          <a href="products.html">Productos</a>
+        </li>
+        <li>
+          <a href="sell.html">Vender</a>
+        </li>
+        <li>
+          <a href="cart.html">Mi carrito</a>
+        </li>
+        <!--Foto de perfil
           <div class="img-profile">
             <img id="profile" src="img/profile.jpg" alt="luismiguel" srcset="" />
           </div>
           <!--Menú desplegable (acceso a cuenta y más)-->
-          <a
-            class="nav-link dropdown-toggle"
-            data-toggle="dropdown"
-            href="#"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            id="user-a"
-            ><script>
-              document.getElementById(
-                "user-a"
-              ).innerHTML = localStorage.getItem("user");
-            </script>
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
-            <a class="dropdown-item" href="#">Mis Compras</a>
-            <a class="dropdown-item" href="cart.html">Carrito</a>
-            <div class="dropdown-divider"></div>
-            <a
-              class="dropdown-item"
-              id="c-sesion"
-              href="#"
-              onclick="cerrarSesion()"
-              >Cerrar Sesión</a
-            >
-          </div>
-        </ul>
-      </div>
-    </nav>
-    <!--Inicio del Contenido de la página-->
-    <main>
-      <div class="container p-5">
-          <h2 id="productName"></h2>
-              <hr class="my-3">
-              <dl>
-                <dt class="subtitle">Descripción</dt>
-                <dd>
-                  <p id="productDescription"></p>
-                </dd>
-        
-                <dt class="subtitle">Precio</dt>
-                <dd>
-                  <span><p id="productCurrency"></p><p id="productCost"></p></span>
-                </dd>
-        
-                <dt class="subtitle">Cantidad de unidades vendidas</dt>
-                <dd>
-                  <p id="productSoldCount"></p>
-                </dd>
-                <dt class="subtitle" style="display: none;">Imágenes ilustrativas</dt>
-                <dd>
-                    <!-- Slideshow container -->
-                    <div class="slideshow-container" >
-                      <div class="demo">
-                          <ul id="productImagesGallery" >
-                          </ul>
-                    </div>
-                </dd>
-                
-                <dt class="subtitle">Productos relacionados</dt>
-                <dd>
-                  <div class="row text-center text-lg-left pt-2" id="productRelatedProducts">
-                  </div>
-                </dd>
-              </dl>
-                <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-      </div>
-    </main>
-    
-    <!--Inicio del Pie de la página-->
-    <footer class="text-muted" id="bg-footer">
-      <div class="container">
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>
-          Clickea
-          <a id="a-footer" target="_blank" href="Letra.pdf">aquí</a> para
-          descargar la letra del obligatorio.
-        </p>
-      </div>
-    </footer>
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false" id="user-a">
+          <script>
+            document.getElementById(
+              "user-a"
+            ).innerHTML = localStorage.getItem("user");
+          </script>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="my-profile.html">Mi Cuenta</a>
+          <a class="dropdown-item" href="#">Mis Compras</a>
+          <a class="dropdown-item" href="cart.html">Carrito</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" id="c-sesion" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </div>
+      </ul>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/product-info.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/nav-classActive.js"></script>
-  </body>
+  </nav>
+  <!--Inicio del Contenido de la página-->
+  <main>
+    <div class="container p-5">
+      <h2 id="productName"></h2>
+      <hr class="my-3">
+      <dl>
+        <dt class="subtitle">Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt class="subtitle">Precio</dt>
+        <dd>
+          <span>
+            <p id="productCurrency"></p>
+            <p id="productCost"></p>
+          </span>
+        </dd>
+
+        <dt class="subtitle">Cantidad de unidades vendidas</dt>
+        <dd>
+          <p id="productSoldCount"></p>
+        </dd>
+        <dt class="subtitle">Imágenes ilustrativas</dt>
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2"
+          data-ride="carousel">
+
+          <!--Controls-->
+          <div class="controls-top">
+            <a class="black-text" href="#multi-item-example" data-slide="prev"><i
+                class="fas fa-angle-left fa-3x pr-3"></i></a>
+            <a class="black-text" href="#multi-item-example" data-slide="next"><i
+                class="fas fa-angle-right fa-3x pl-3"></i></a>
+          </div>
+          <!--/.Controls-->
+
+          <!--Slides-->
+          <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/prod1.jpg" alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/prod1_1.jpg" alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/Chevrolet Onix/chevroelt-onix-joy-auto-volante.jpg"
+                    alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/Chevrolet Onix/chevroelt-onix-joy-auto-compacto-diagonal.jpg"
+                    alt="Card image cap">
+                </div>
+              </div>
+
+            </div>
+            <!--/.First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/Chevrolet Onix/chevroelt-onix-joy-volante-zoom.jpg"
+                    alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/prod1_2.jpg" alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/prod1_3.jpg" alt="Card image cap">
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <div class="card">
+                  <img class="img-fluid" src="img/prod1_4.jpg" alt="Card image cap">
+                </div>
+              </div>
+
+            </div>
+            <!--/.Second slide-->
+          </div>
+          <!--/.Slides-->
+        </div>
+        <!--/.Carousel Wrapper-->
+
+        <dt class="subtitle">Productos relacionados</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productRelatedProducts">
+            <div class="col-lg-3 col-md-4 col-6">
+              <div class="d-block mb-4 w-100">
+                <a href="product-info.html">
+                  <img class="img-fluid img-thumbnail" src="img/car1.jpg" alt=""></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+              <div class="d-block mb-4 w-100">
+                <a href="product-info.html">
+                  <img class="img-fluid img-thumbnail" src="img/car3.jpg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </dd>
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+    </div>
+  </main>
+
+  <!--Inicio del Pie de la página-->
+  <footer class="text-muted" id="bg-footer">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>
+        Clickea
+        <a id="a-footer" target="_blank" href="Letra.pdf">aquí</a> para
+        descargar la letra del obligatorio.
+      </p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/nav-classActive.js"></script>
+</body>
+
 </html>

@@ -59,7 +59,7 @@ function showCategoriesList() {
     ) {
       htmlContentToAppend +=
         `
-            <a href="category-info.html" class="list-group-item list-group-item-action" id="a-hover">
+            <a href="product-info.html" class="list-group-item list-group-item-action" id="a-hover">
                 <div class="row">
                     <div class="col-3">
                         <img src="` +
@@ -90,7 +90,7 @@ function showCategoriesList() {
             </a>
             `;
     }
-
+    //mod:"cat-list.container" por "prod-list-container"
     document.getElementById(
       "cat-list-container"
     ).innerHTML = htmlContentToAppend;
@@ -169,15 +169,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
       showCategoriesList();
     });
-  document.getElementById("b-search").addEventListener("click", function () {
-    busqueda = document.getElementById("p-search").value;
-
-    /*if (
-      busqueda == "Susuki Celerio" ||
-      "Chevrolet Onix Joy" ||
-      "Fiat Way" ||
-      "Peugeot 208"
-    ) {
-    }*/
-  });
 });
