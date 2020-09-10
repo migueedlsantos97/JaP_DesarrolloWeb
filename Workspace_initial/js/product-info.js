@@ -28,3 +28,30 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   });
 });
+
+//Agregué la función para mostrar los comentarios
+function showComments(array) {
+  for (let i = 0; i < array.length; i++) {
+    let comment = array[i];
+    let score = "";
+    for (let i = 1; i < comment.score; i++) {
+      score += `<span class="fa fa.star" id="starUnchecked"></span>`
+    }
+    htmlContentToAppend += `
+      <hr class ="my-3">
+      <div>
+      <span> `+ score + `</span>
+      <p> `+ comment.description + `</p>
+      <p> `+ `Publicado el ` + comment.dataTime + `</p>
+      </div>
+      `
+
+    document.getElementById("comentarios").innerHTML = htmlContentToAppend;
+  }
+}
+getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
+  if (resultObj.status === "ok") {
+    commentArray = resultObj.data;
+  }
+  showComments(commentArray);
+})
