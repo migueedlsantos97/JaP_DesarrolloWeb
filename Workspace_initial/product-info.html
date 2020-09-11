@@ -71,23 +71,31 @@
       <h2 id="productName"></h2>
       <hr class="my-3">
       <dl>
-        <dt class="subtitle">Descripción</dt>
-        <dd>
-          <p id="productDescription"></p>
-        </dd>
-
-        <dt class="subtitle">Precio</dt>
-        <dd>
-          <span>
-            <p id="productCurrency"></p>
-            <p id="productCost"></p>
-          </span>
-        </dd>
-
-        <dt class="subtitle">Cantidad de unidades vendidas</dt>
-        <dd>
-          <p id="productSoldCount"></p>
-        </dd>
+        <div class="info-relevante">
+          <div class="descripcion">
+            <dt class="subtitle">Descripción</dt>
+            <dd>
+              <p class="p-descripcion" id="productDescription"></p>
+            </dd>
+          </div>
+          <div class="numeros">
+            <div class="precio">
+              <dt class="subtitle">Precio</dt>
+              <dd>
+                <span>
+                  <p id="productCurrency"></p>
+                  <p id="productCost"></p>
+                </span>
+              </dd>
+            </div>
+            <div class="saldo-ventas">
+              <dt class="subtitle">Cantidad de unidades vendidas</dt>
+              <dd>
+                <p id="productSoldCount"></p>
+              </dd>
+            </div>
+          </div>
+        </div>
         <dt class="subtitle">Imágenes ilustrativas</dt>
         <!--Carousel Wrapper-->
         <div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2"
@@ -171,7 +179,7 @@
           <!--/.Slides-->
         </div>
         <!--/.Carousel Wrapper-->
-
+        <hr>
         <dt class="subtitle">Productos relacionados</dt>
         <dd>
           <div class="row text-center text-lg-left pt-2" id="productRelatedProducts">
@@ -189,12 +197,73 @@
             </div>
           </div>
         </dd>
-        <dd>
-          <div id="comentarios">
-
+        <hr>
+        <div class="seccion-comentarios">
+          <div id="seccion-1">
+            <div class="t-comentarios">
+              <a href="" id="subtitle">Comentarios</a>
+            </div>
+            <div class="v-comentarios">
+              <div id="comentarios">
+              </div>
+            </div>
+            <div id="nuevo-comentario">
+              <form id="form-comentario">
+                <h3>Agregar nuevo comentario</h3>
+                <input type="text" autocomplete="off" placeholder="Usuario" id="comment-user" required></input>
+                <textarea id="contenido" rows="5" placeholder="Escribe tu comentario..." required></textarea>
+                <div class="calification">
+                  <p>Calificación:</p>
+                  <select id="options">
+                    <option disabled selected>Elija una opción</option>
+                    <option>Muy malo</option>
+                    <option>Malo</option>
+                    <option>Aceptable</option>
+                    <option>Muy bueno</option>
+                    <option>Excelente</option>
+                  </select>
+                </div>
+                <div class="btn">
+                  <button type="submit" class="btn-send">Enviar</button>
+                  <button type="reset" class="btn-clear">Limpiar</button>
+                </div>
+              </form>
+            </div>
           </div>
-        </dd>
+          <div id="seccion-2">
+            <div class="t-preguntas">
+              <a href="" id="subtitle">Preguntas</a>
+            </div>
+            <div class="v-preguntas">
+              <div id="preguntas">
+              </div>
+            </div>
+            <div id="nueva-pregunta">
+              <form id="form-pregunta">
+                <h3>Agregar una nueva pregunta</h3>
+                <input type="text" autocomplete="off" placeholder="Usuario" id="question-user" required></input>
+                <textarea id="contenido" rows="5" placeholder="Escribe tu pregunta..." required></textarea>
+                <div class="calification">
+                  <p>Calificación:</p>
+                  <select id="options">
+                    <option disabled selected>Elija una opción</option>
+                    <option>Muy malo</option>
+                    <option>Malo</option>
+                    <option>Aceptable</option>
+                    <option>Muy bueno</option>
+                    <option>Excelente</option>
+                  </select>
+                </div>
+                <div class="btn">
+                  <button type="submit" class="btn-send">Enviar</button>
+                  <button type="reset" class="btn-clear">Limpiar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </dl>
+      <hr>
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
@@ -222,6 +291,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/comments.js"></script>
   <script src="js/login.js"></script>
   <script src="js/nav-classActive.js"></script>
 </body>
