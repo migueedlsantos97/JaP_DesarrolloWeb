@@ -210,14 +210,20 @@
             <div id="nuevo-comentario">
               <form id="form-comentario">
                 <h3>Hacer un comentario</h3>
-                <input type="text" id="comment-user" disabled="disabled">
-                <script>
-                  document.getElementById(
-                    "comment-user"
-                  ).value = localStorage.getItem("user");
-                </script>
-                </input>
-                <input type="text" id="Fecha-comentario" disabled="disabled">
+                <div class="user-content">
+                  <i class="fas fa-user-circle"></i>
+                  <input type="text" id="comment-user" disabled="disabled">
+                  <script>
+                    document.getElementById(
+                      "comment-user"
+                    ).value = localStorage.getItem("user");
+                  </script>
+                  </input>
+                </div>
+                <div class="date-content">
+                  <i class="fas fa-calendar-alt"></i>
+                  <input type="text" id="comment-dateUser" disabled="disabled">
+                </div>
                 <textarea id="contenido" rows="5" placeholder="Escribe tu comentario..." required></textarea>
                 <div class="calification">
                   <p>Calificación:</p>
@@ -230,14 +236,15 @@
                     <option>Excelente</option>
                   </select>
                 </div>
-                <div class="btn">
-                  <button type="submit" class="btn-send">Enviar</button>
-                  <button type="reset" class="btn-clear">Limpiar</button>
+                <div class="btnFNcomment">
+                  <button type="submit" class="btn-send"
+                    onclick="alert('!Lo siento, todavía no funciona cargar el comentario nuevo, en la próxima entrega estará listo!!')">Enviar</button>
+                  <button type="reset" class="btn-clear" onclick="limpiar()">Limpiar</button>
                 </div>
               </form>
             </div>
           </div>
-          <div id="seccion-2">
+          <!--<div id="seccion-2">
             <div class="t-preguntas">
               <a href="" id="subtitle">Preguntas</a>
             </div>
@@ -261,7 +268,7 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div>-->
         </div>
       </dl>
       <hr>

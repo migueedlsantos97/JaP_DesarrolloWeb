@@ -128,6 +128,7 @@
 
 .icono-eMERCADO img {
   font-size: 40px;
+  background-color: transparent;
 }
 
 .icono-eMERCADO p {
@@ -453,16 +454,35 @@ footer p {
   font-weight: bold;
 }
 
-#comment-user, #question-user {
-  outline: none;
+/*-- Iconos e input de Form. nuevo comentario --*/
+
+.user-content, .date-content {
   width: 100%;
   margin-bottom: 10px;
-  text-indent: 5px;
-  color: #495057;
+  display: flex;
 }
 
-#comment-user::placeholder, #question-user::placeholder {
-  color: #A6A6A6;
+.fa-user-circle, .fa-calendar-alt {
+  display: flex;
+  align-self: center;
+  font-size: 20px;
+}
+
+.fa-user-circle {
+  margin-right: 5px;
+}
+
+.fa-calendar-alt {
+  margin-right: 7px;
+}
+
+/*--  --*/
+
+#comment-user, .comment-dateUser, #question-user {
+  outline: none;
+  width: 100%;
+  text-indent: 5px;
+  color: #495057;
 }
 
 #contenido {
@@ -471,6 +491,7 @@ footer p {
   margin-bottom: 10px;
   text-indent: 5px;
   color: #495057;
+  font-style: italic;
 }
 
 #contenido::placeholder {
@@ -495,12 +516,13 @@ footer p {
   font-size: 15px;
 }
 
-.btn {
+.btnFNcomment {
   width: 100%;
   display: inline-block;
+  text-align: center;
 }
 
-.btn button {
+.btnFNcomment button {
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
@@ -508,7 +530,7 @@ footer p {
   background-color: #ced4da;
 }
 
-.btn button:hover {
+.btnFNcomment button:hover {
   background-color: #344059;
   color: #fff;
   transition: 0.5s;

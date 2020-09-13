@@ -1,34 +1,62 @@
-//Accedo al formulario de Nuevo comentario
+//Función para obetener la fecha y hora del sistema, para así cargarlo en mi Formulario de nuevo Comentario.
 
-var usuario = document.getElementById("comment-user").Value;
-var comentario = document.getElementById("comment-user").Value;
-
-
-/*function fechaComentario(num) {
-    return (num >= 0 && num < 10) ? "0" + num : num + "";
+function getDateTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;//sumamos 1 porque arranca en 0.
+    var day = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    if (month.toString().length == 1) {
+        month = '0' + month;
+    }
+    if (day.toString().length == 1) {
+        day = '0' + day;
+    }
+    if (hour.toString().length == 1) {
+        hour = '0' + hour;
+    }
+    if (minute.toString().length == 1) {
+        minute = '0' + minute;
+    }
+    if (second.toString().length == 1) {
+        second = '0' + second;
+    }
+    var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+    return dateTime;
 }
 
-window.onload = function () {
-    var now = new Date();
-    var strDateTime = [[fechaComentario(now.getDate()),
-    fechaComentario(now.getMonth() + 1),
-    now.getFullYear()].join("/"),
-    [fechaComentario(now.getHours()),
-    fechaComentario(now.getMinutes())].join(":"),
-    now.getHours() >= 12 ? "PM" : "AM"].join(" ");
-    document.getElementById("Fecha-comentario").innerHTML = strDateTime;
-};*/
+// Devuelve la fecha y hora y carga los valores al input.
+setInterval(function () {
+    DateComentary = getDateTime();
+    document.getElementById("comment-dateUser").value = DateComentary;
+}, 1000);
+
+//Función para limpiar solo el campo "Textarea" de mi Formulario de nuevo comentario.
+function limpiar() {
+    document.getElementById("contenido").value = "";
+}
+
+//Función para agregar el nuevo comentario.
 
 
-var today = new Date();
-var today = new Date();
-var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var today = new Date();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var today = new Date();
-var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date + ' ' + time;
 
-document.getElementById("Fecha-comentario").Value = dateTime;
+/*function nuevoComentario() {
+    let usuario = document.getElementById("comment-dateUser").value;
+    let fechaComentario = DateComentary;
+    let comentario = document.getElementById("contenido").value;
+    var comentarioNuevo = {
+        "score": puntuacion,
+        "description": comentario,
+        "user": usuario,
+        "dateTime": fechaComentario
+    }
+    commentArray.push(comentarioNuevo);
+    showComments(Array);
+}
 
+document.getElementsByClassName("btn-send").addEventListenner("click", function (a) {
+    a.preventDefault(),
+        nuevoComentario(ratingStars);
+});*/

@@ -21,10 +21,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         product.currency + ` ` + product.cost;
       productSoldCountHTML.innerHTML = product.soldCount;
 
-      //Muestro las imagenes en forma de galería (sin controles)
-      showImagesGallery(product.images);
-      //Muestro imagenes de los productos relacionados
-      showRelatedProducts(product.relatedProducts);
     }
   });
 });
