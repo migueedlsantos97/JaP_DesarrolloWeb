@@ -209,8 +209,15 @@
             </div>
             <div id="nuevo-comentario">
               <form id="form-comentario">
-                <h3>Agregar nuevo comentario</h3>
-                <input type="text" autocomplete="off" placeholder="Usuario" id="comment-user" required></input>
+                <h3>Hacer un comentario</h3>
+                <input type="text" id="comment-user" disabled="disabled">
+                <script>
+                  document.getElementById(
+                    "comment-user"
+                  ).value = localStorage.getItem("user");
+                </script>
+                </input>
+                <input type="text" id="Fecha-comentario" disabled="disabled">
                 <textarea id="contenido" rows="5" placeholder="Escribe tu comentario..." required></textarea>
                 <div class="calification">
                   <p>Calificación:</p>
@@ -240,20 +247,14 @@
             </div>
             <div id="nueva-pregunta">
               <form id="form-pregunta">
-                <h3>Agregar una nueva pregunta</h3>
-                <input type="text" autocomplete="off" placeholder="Usuario" id="question-user" required></input>
+                <h3>Hacer una pregunta</h3>
+                <input type="text" id="question-user" disabled="disabled">
+                <script>
+                  document.getElementById(
+                    "question-user"
+                  ).value = localStorage.getItem("user");
+                </script></input>
                 <textarea id="contenido" rows="5" placeholder="Escribe tu pregunta..." required></textarea>
-                <div class="calification">
-                  <p>Calificación:</p>
-                  <select id="options">
-                    <option disabled selected>Elija una opción</option>
-                    <option>Muy malo</option>
-                    <option>Malo</option>
-                    <option>Aceptable</option>
-                    <option>Muy bueno</option>
-                    <option>Excelente</option>
-                  </select>
-                </div>
                 <div class="btn">
                   <button type="submit" class="btn-send">Enviar</button>
                   <button type="reset" class="btn-clear">Limpiar</button>
@@ -291,7 +292,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
-  <script src="js/comments.js"></script>
+  <script src="js/new-comments.js"></script>
   <script src="js/login.js"></script>
   <script src="js/nav-classActive.js"></script>
 </body>

@@ -409,12 +409,12 @@ footer p {
   color: #495057
 }
 
-#faces:hover {
-  color: #000;
+#starsOn {
+  color: #F2CE1B;
 }
 
-#faces:focus {
-  color: #a6033f;
+#starsOff {
+  color: #BFBFBF;
 }
 
 .p-comment {

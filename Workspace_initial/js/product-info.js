@@ -29,6 +29,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
 });
 
+//Función que crea el rating de "estrellas" para la calificación (es temporal para este Entregable, luego lo cambio al de "caritas").
+
+function ratingStars(rating) {
+  let stars;
+  if (rating === 0) {
+    stars = '<span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span>'
+  } else if (rating === 1) {
+    stars = '<span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span>'
+  } else if (rating === 2) {
+    stars = '<span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span>'
+  } else if (rating === 3) {
+    stars = '<span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span>'
+  } else if (rating === 4) {
+    stars = '<span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOff"><i class="fas fa-star"></i></span>'
+  } else if (rating === 5) {
+    stars = '<span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span><span id="starsOn"><i class="fas fa-star"></i></span>'
+  }
+  return stars;
+}
+
+
 //Funcion que crea el rating de "caritas" para la calificación
 //rating = 0; Face:"meh-blank";
 //rating = 1; Face:"angry";Text:"Muy malo"
@@ -36,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 //rating = 3; Face:"meh";Text:"Aceptable"
 //rating = 4; Face:"grin-alt";Text:"Muy bueno"
 //rating = 5; Face:"grin-stars";Text:"Excelente"
-function ratingFaces(rating) {
+/*function ratingFaces(rating) {
   let faces;
   if (rating === 0) {
     faces = '<span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span>'
@@ -52,21 +73,21 @@ function ratingFaces(rating) {
     faces = '<span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span>'
   }
   return faces;
-}
+}*/
 
-let showFaces;
+let showStars;
 //Función para mostrar los comentarios
 function showComments(array) {
   let htmlContentToAppend = "";
 
   for (let i = 0; i < array.length; i++) {
     let comment = array[i];
-    let showFaces = comment.score;
+    let showStars = comment.score;
     htmlContentToAppend += `
             <div class="card mb-2">
                 <div class="d-block">
                     <div class="card-header align-user w-100">
-                    <div class="col m-0 pl-0" id="user-comment">`+ comment.user + '</div><div class="col text-right"> Calificación: ' + ratingFaces(showFaces) + `</div>
+                    <div class="col m-0 pl-0" id="user-comment">`+ comment.user + '</div><div class="col text-right"> Calificación: ' + ratingStars(showStars) + `</div>
                     </div>
                 </div>
                 <div class="card-body ">
@@ -85,36 +106,33 @@ getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
   if (resultObj.status === "ok") {
     commentArray = resultObj.data;
   }
-  showComments(commentArray);
+  showComments(commentArray);//los guardo en mi función para usarlos luego.
 })
-//display propierty (display:none) ver esto para ocultar la pestaña activa y mostrar la otra
 
 //arreglo.push(nuevoElemento);
 
-
 //Función para mostrar las preguntas
 //Crear array estilo JSON para las preguntas
-/*function showComments(array) {
+/*function showQuestions(array) {
   let htmlContentToAppend = "";
 
   for (let i = 0; i < array.length; i++) {
-    let comment = array[i];
-    let showFaces = comment.score;
+    let question = array[i];
     htmlContentToAppend += `
             <div class="card mb-2">
                 <div class="d-block">
                     <div class="card-header align-user w-100">
-                    <div class="col m-0 pl-0" id="user-question">`+ comment.user + '</div><div class="col text-right"> Calificación: ' + ratingFaces(showFaces) + `</div>
+                    <div class="col m-0 pl-0" id="user-question">`+ question.user + '</div>
                     </div>
                 </div>
                 <div class="card-body ">
                     <blockquote class="blockquote mb-0">
-                    <div class="blockquote-footer text-right m-0">`+ comment.dateTime + `</div>
-                    <p class="p-comment">"`+ comment.description + `"</p>
+                    <div class="blockquote-footer text-right m-0">`+ question.dateTime + `</div>
+                    <p class="p-question">"`+ question.description + `"</p>
                     </blockquote>
                 </div>
             </div>
             `
-    document.getElementById("comentarios").innerHTML = htmlContentToAppend;
+    document.getElementById("preguntas").innerHTML = htmlContentToAppend;
   }
 }*/
