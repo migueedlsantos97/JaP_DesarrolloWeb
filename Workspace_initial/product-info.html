@@ -183,18 +183,6 @@
         <dt class="subtitle">Productos relacionados</dt>
         <dd>
           <div class="row text-center text-lg-left pt-2" id="productRelatedProducts">
-            <div class="col-lg-3 col-md-4 col-6">
-              <div class="d-block mb-4 w-100">
-                <a href="product-info.html">
-                  <img class="img-fluid img-thumbnail" src="img/car1.jpg" alt=""></a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-              <div class="d-block mb-4 w-100">
-                <a href="product-info.html">
-                  <img class="img-fluid img-thumbnail" src="img/car3.jpg" alt=""></a>
-              </div>
-            </div>
           </div>
         </dd>
         <hr>
@@ -227,14 +215,26 @@
                 <textarea id="contenido" rows="5" placeholder="Escribe tu comentario..." required></textarea>
                 <div class="calification">
                   <p>Calificación:</p>
-                  <select id="options">
+                  <div class="clasificacion" id="scoreForm">
+                    <input id="radio1" type="radio" name="estrellas" value="5">
+                    <label for="radio1" value="5">★</label>
+                    <input id="radio2" type="radio" name="estrellas" value="4">
+                    <label for="radio2" value="4">★</label>
+                    <input id="radio3" type="radio" name="estrellas" value="3">
+                    <label for="radio3" value="3">★</label>
+                    <input id="radio4" type="radio" name="estrellas" value="2">
+                    <label for="radio4" value="2">★</label>
+                    <input id="radio5" type="radio" name="estrellas" value="1">
+                    <label for="radio5" value="1">★</label>
+                  </div>
+                  <!--select id="options">
                     <option disabled selected>Elija una opción</option>
                     <option>Muy malo</option>
                     <option>Malo</option>
                     <option>Aceptable</option>
                     <option>Muy bueno</option>
                     <option>Excelente</option>
-                  </select>
+                  </select-->
                 </div>
                 <div class="btnFNcomment">
                   <button type="submit" class="btn-send"
@@ -272,7 +272,11 @@
         </div>
       </dl>
       <hr>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+      <div class="contenedor-btnVer">
+        <i class="fas fa-arrow-circle-left"></i>
+        <a type="button" id="ver-productos" class="btn btn-light btn-lg btn-block" href="products.html">Ver
+          productos</a>
+      </div>
     </div>
   </main>
 

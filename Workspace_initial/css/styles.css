@@ -1,4 +1,6 @@
-/* ----- IR ARRIBA ----- */
+/* ----- PÁGINA ----- */
+
+/* ----- IR ARRIBA (icono) ----- */
 
 .go-top {
   position: fixed;
@@ -8,7 +10,6 @@
   height: 50px;
   background-color: #fff;
   border: 2px solid #a6033f;
-  /*acá uso la variable "rojo"*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,7 @@
 }
 
 .go-top:hover span {
-  color: var(--white);
+  color: #fff;
 }
 
 .go-top>span {
@@ -32,11 +33,15 @@
   color: #a6033f;
 }
 
-/* ----- PAGINA ----- */
+/* ----- </Ir Arriba----- */
+
+/* ----- Fuente gral de la página----- */
 
 .jumbotron, .card-body, .container, .site-header {
   font-family: "Raleway", serif !important;
 }
+
+/* ----- BARRA DE NAVEGACIÓN----- */
 
 .site-header {
   position: relative;
@@ -128,7 +133,6 @@
 
 .icono-eMERCADO img {
   font-size: 40px;
-  background-color: transparent;
 }
 
 .icono-eMERCADO p {
@@ -174,12 +178,23 @@
   background-color: #a6033f;
 }
 
-.light-text {
-  color: white;
+#c-sesion:hover {
+  color: #fff;
+  font-weight: bold;
 }
 
 .site-header .dropdown-menu a {
   color: black;
+}
+
+.site-header .dropdown-menu a:hover {
+  font-weight: bold;
+}
+
+/* ----- </Barra de navegación----- */
+
+.light-text {
+  color: white;
 }
 
 .dropzone {
@@ -256,31 +271,9 @@ a.custom-card, a.custom-card:hover {
   text-decoration: inherit;
 }
 
-.checked {
-  color: orange;
-}
-
 .main {
   margin-top: 50px;
-}
-
-footer {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-footer p {
-  color: cadetblue !important;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-#a-footer {
-  color: #fff !important;
-}
-
-#bg-footer {
-  background-color: #344059 !important;
+  margin-bottom: 20px;
 }
 
 .product-search {
@@ -293,6 +286,7 @@ footer p {
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
+  margin-right: 10px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -309,10 +303,14 @@ footer p {
 
 /* ----- PRODUCT-INFO ----- */
 
+/*-- Títulos (nombre del auto) --*/
+
 .container h2 {
   font-weight: bold;
   color: #343a40;
 }
+
+/*-- Subtítulos --*/
 
 .subtitle {
   margin-bottom: 10px;
@@ -320,10 +318,75 @@ footer p {
   color: #495057;
 }
 
+/*-- Controles del carousel --*/
+
 .controls-top i {
   font-size: 20px;
   color: #495057;
 }
+
+/*-- Contenedor de Info producto --*/
+
+.info-relevante {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/*-- Descripcion del producto (contenedor) --*/
+
+.descripcion {
+  width: 59%;
+}
+
+/*-- Descripcion del producto (parrafo) --*/
+
+.p-descripcion {
+  width: 100%;
+  font-size: 16px;
+  text-align: justify;
+  padding-right: 10px;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/*-- Precio del producto (contenedor) --*/
+
+.precio {
+  margin-left: 10px;
+}
+
+/*-- Saldo del producto (contenedor) --*/
+
+.saldo-ventas {
+  margin-left: 10px;
+}
+
+/*-- Estrellas check --*/
+
+#starsOn {
+  color: #F2CE1B;
+}
+
+/*-- Estrellas Uncheck --*/
+
+#starsOff {
+  color: #BFBFBF;
+}
+
+/*-- Texto del comentario (precargado) --*/
+
+.p-comment {
+  font-size: 20px;
+  font-style: italic;
+  color: #495057
+}
+
+.blockquote-footer {
+  font-size: 13px;
+}
+
+/*-- COMENTARIOS --*/
 
 .seccion-comentarios {
   box-sizing: border-box;
@@ -331,6 +394,8 @@ footer p {
   position: relative;
   z-index: 5;
 }
+
+/*-- Visualización de Comentarios y de Preguntas --*/
 
 .v-comentarios, .v-preguntas {
   border: 1px solid #ced4da;
@@ -340,9 +405,13 @@ footer p {
   border-bottom-right-radius: 5px;
 }
 
+/*-- Pestaña (contenedor) de Comentarios y de Preguntas --*/
+
 .t-comentarios, .t-preguntas {
   margin-bottom: 7px;
 }
+
+/*-- Pestaña (título) de Comentarios y de Preguntas --*/
 
 #subtitle {
   padding: 10px;
@@ -359,73 +428,6 @@ footer p {
   text-decoration: none;
   background-color: #ced4da;
   color: #343a40;
-}
-
-.info-relevante {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.descripcion {
-  width: 59%;
-}
-
-.p-descripcion {
-  width: 100%;
-  font-size: 16px;
-  text-align: justify;
-  padding-right: 10px;
-  border-right: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-.precio {
-  margin-left: 10px;
-}
-
-.saldo-ventas {
-  margin-left: 10px;
-}
-
-.card-header {
-  background-color: #F2F2F2;
-}
-
-.card-header:hover {
-  background-color: #c7d1d9
-}
-
-.card-header span {
-  font-size: 20px;
-}
-
-.card-header span:hover {
-  font-size: 25px;
-  color: #000;
-}
-
-#user-comment, #question-user {
-  font-weight: 700;
-  color: #495057
-}
-
-#starsOn {
-  color: #F2CE1B;
-}
-
-#starsOff {
-  color: #BFBFBF;
-}
-
-.p-comment {
-  font-size: 20px;
-  font-style: italic;
-  color: #495057
-}
-
-.blockquote-footer {
-  font-size: 13px;
 }
 
 #nuevo-comentario {
@@ -447,6 +449,8 @@ footer p {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
+/*-- Subtitulo del Form Comentario y Pregunta --*/
+
 #form-comentario h3, #form-pregunta h3 {
   margin-bottom: 20px;
   text-align: center;
@@ -454,12 +458,21 @@ footer p {
   font-weight: bold;
 }
 
-/*-- Iconos e input de Form. nuevo comentario --*/
+/*-- Contenedor de usuario (input e icono) --*/
 
 .user-content, .date-content {
   width: 100%;
   margin-bottom: 10px;
   display: flex;
+}
+
+/*--input --*/
+
+#comment-user, .comment-dateUser, #question-user {
+  outline: none;
+  width: 100%;
+  text-indent: 5px;
+  color: #495057;
 }
 
 .fa-user-circle, .fa-calendar-alt {
@@ -476,14 +489,7 @@ footer p {
   margin-right: 7px;
 }
 
-/*--  --*/
-
-#comment-user, .comment-dateUser, #question-user {
-  outline: none;
-  width: 100%;
-  text-indent: 5px;
-  color: #495057;
-}
+/*-- Contenedor de textArea (input) --*/
 
 #contenido {
   outline: none;
@@ -498,6 +504,8 @@ footer p {
   color: #A6A6A6;
 }
 
+/*-- Contenedor de Select (input) --*/
+
 .calification {
   width: 100%;
   display: flex;
@@ -509,12 +517,36 @@ footer p {
   margin-right: 10px;
 }
 
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+  font-size: 30px;
+}
+
+label:hover, label:hover~label {
+  color: orange;
+}
+
+input[type="radio"]:checked~label {
+  color: orange;
+}
+
 #options {
   outline: none;
   height: 25px;
   color: #344059;
   font-size: 15px;
 }
+
+/*-- Contenedor de Botones del form Comentario y Preguntas --*/
 
 .btnFNcomment {
   width: 100%;
@@ -537,6 +569,28 @@ footer p {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
+/*-- </Comentarios --*/
+
+/* ----- </Product-Info ----- */
+
+.card-header {
+  background-color: #F2F2F2;
+}
+
+.card-header span {
+  font-size: 20px;
+}
+
+.card-header span:hover {
+  font-size: 25px;
+  color: #000;
+}
+
+#user-comment, #question-user {
+  font-weight: 700;
+  color: #495057
+}
+
 /* ----- GALERIA DE FOTOS ----- */
 
 @media (min-width: 768px) {
@@ -557,3 +611,68 @@ footer p {
   display: flex;
   align-self: center;
 }
+
+/* ----- BOTÓN CERCA DEL FOOTER ----- */
+
+.contenedor-btnVer {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.contenedor-btnVer i {
+  position: absolute;
+  left: 41%;
+  margin-top: 14px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.contenedor-btnVer i:hover {
+  color: #fff;
+}
+
+.contenedor-btnVer a {
+  padding-left: 30px;
+}
+
+#ver-categorias, #ver-productos {
+  margin-left: 40%;
+  width: 20%;
+  border-radius: 30px;
+  background-color: #ced4da;
+}
+
+#ver-categorias:hover, #ver-productos:hover {
+  background-color: #344059;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ----- </Botón cerca del Footer ----- */
+
+/* ----- FOOTER ----- */
+
+footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+footer p {
+  color: cadetblue !important;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+#a-footer {
+  color: #fff !important;
+}
+
+#bg-footer {
+  background-color: #344059 !important;
+}
+
+/* ----- </ Footer ----- */

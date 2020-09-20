@@ -22,8 +22,28 @@ document.addEventListener("DOMContentLoaded", function (e) {
       productSoldCountHTML.innerHTML = product.soldCount;
 
     }
+    showRelatedProducts(product.relatedProducts);
   });
 });
+
+function showRelatedProducts(array) {
+
+  let htmlContentToAppend = "";
+
+  for (let i = 0; i < array.length; i++) {
+    let relatedProducts = array[i];
+
+    htmlContentToAppend += `
+      <div class="col-lg-3 col-md-4 col-6">
+          <div class="d-block mb-4 w-100">
+              <a href="product-info.html"> <img class="img-fluid img-thumbnail" src="img/car` + relatedProducts + `.jpg" alt=""></a>
+          </div>
+      </div>
+      `
+
+    document.getElementById("productRelatedProducts").innerHTML = htmlContentToAppend;
+  }
+}
 
 //Función que crea el rating de "estrellas" para la calificación (es temporal para este Entregable, luego lo cambio al de "caritas").
 
