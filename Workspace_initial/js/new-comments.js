@@ -31,6 +31,7 @@ function getDateTime() {
 setInterval(function () {
     DateComentary = getDateTime();
     document.getElementById("comment-dateUser").value = DateComentary;
+    document.getElementById("question-dateUser").value = DateComentary;
 }, 1000);
 
 //Función para limpiar solo el campo "Textarea" de mi Formulario de nuevo comentario.

@@ -170,3 +170,72 @@ document.addEventListener("DOMContentLoaded", function (e) {
       showCategoriesList();
     });
 });
+
+//Función para cargar el resultado del buscador o visualizar alerta de no coincidencia
+function buscarProducto(aux) {
+  let htmlContentToAppend = "";
+  for (let producto of currentCategoriesArray) {
+    let nombre = producto.name.toLowerCase();
+    if (nombre.indexOf(aux) !== -1) {
+      htmlContentToAppend +=
+        `
+      <a href="product-info.html" class="list-group-item list-group-item-action">
+          <div class="row">
+              <div class="col-3">
+                  <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
+              </div>
+              <div class="col">
+                  <div class="d-flex w-100 justify-content-between">
+                      <h4 class="mb-1">`+ producto.name + `</h4>
+                      <small class="text-muted">` + producto.soldCount + ` artículos</small>
+                  </div>
+                  <p class="mb-1">` + producto.description + `</p>
+                  <h5> `+ producto.currency + ` ` + producto.cost + `</h5>
+              </div>
+          </div>
+      </a>
+      `
+      document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+    }
+  }
+  if (htmlContentToAppend === '') {
+
+
+
+    htmlContentToAppend +=
+
+      `
+      </br>
+      <div class="alert-danger mx-auto" style="width: 80%" role="alert">
+      <h3 class="alert-heading m-2 text-center"><b>No hay coincidencias con tu búsqueda</b></h3>
+      <hr>
+      <ul class="alert-ul">
+          <li>Revisa la ortografía de la palabra.</li>
+          <li>Utiliza palabras más genéricas o menos palabras..</li>
+      </ul>
+      </div>
+      `
+    document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+  }
+
+}
+
+
+const buscador = document.querySelector('#p-search');
+const boton = document.querySelector('#b-search');
+
+const filtrar = () => {
+
+
+  const texto = buscador.value.toLowerCase();
+
+  if (texto !== '') {
+    buscarProducto(texto);
+  } else {
+    showCategoriesList();
+  }
+
+}
+boton.addEventListener('click', filtrar);
+buscador.addEventListener("keyup", filtrar);
+document.getElementById("p-search").value = "";

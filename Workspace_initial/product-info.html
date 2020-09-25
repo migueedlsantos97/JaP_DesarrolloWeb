@@ -25,7 +25,7 @@
       <ul class="list">
         <div class="icono-eMERCADO">
           <img src="/img/android-chrome-512x512.svg" width="40" height="40" loading="lazy" />
-          <p><b>e-MERCADO</b></p>
+          <a href="index.html"><b>e-MERCADO</b></a>
         </div>
         <li>
           <a href="index.html">Inicio</a>
@@ -186,11 +186,12 @@
           </div>
         </dd>
         <hr>
+        <div class="t-comentarios">
+          <a href="#seccion-1" id="subtitle">Comentarios</a>
+          <a href="#seccion-2" id="subtitle">Preguntas</a>
+        </div>
         <div class="seccion-comentarios">
-          <div id="seccion-1">
-            <div class="t-comentarios">
-              <a href="" id="subtitle">Comentarios</a>
-            </div>
+          <section id="seccion-1">
             <div class="v-comentarios">
               <div id="comentarios">
               </div>
@@ -227,14 +228,6 @@
                     <input id="radio5" type="radio" name="estrellas" value="1">
                     <label for="radio5" value="1">★</label>
                   </div>
-                  <!--select id="options">
-                    <option disabled selected>Elija una opción</option>
-                    <option>Muy malo</option>
-                    <option>Malo</option>
-                    <option>Aceptable</option>
-                    <option>Muy bueno</option>
-                    <option>Excelente</option>
-                  </select-->
                 </div>
                 <div class="btnFNcomment">
                   <button type="submit" class="btn-send"
@@ -243,40 +236,62 @@
                 </div>
               </form>
             </div>
-          </div>
-          <!--<div id="seccion-2">
-            <div class="t-preguntas">
-              <a href="" id="subtitle">Preguntas</a>
-            </div>
+          </section>
+          <section id="seccion-2">
             <div class="v-preguntas">
-              <div id="preguntas">
+              <div class="card mb-2">
+                <div class="d-block">
+                  <div class="card-header align-user w-100">
+                    <div class="col m-0 pl-0" id="user-question">
+                      <p>Miguee_97</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body ">
+                  <blockquote class="blockquote mb-0">
+                    <div class="blockquote-footer text-right m-0">
+                      <p>2020-01-17 13:42:18</p>
+                    </div>
+                    <p class="p-question">¿Cuanto rendimiento tiene este auto?</p>
+                  </blockquote>
+                </div>
               </div>
             </div>
             <div id="nueva-pregunta">
               <form id="form-pregunta">
                 <h3>Hacer una pregunta</h3>
-                <input type="text" id="question-user" disabled="disabled">
-                <script>
-                  document.getElementById(
-                    "question-user"
-                  ).value = localStorage.getItem("user");
-                </script></input>
-                <textarea id="contenido" rows="5" placeholder="Escribe tu pregunta..." required></textarea>
-                <div class="btn">
-                  <button type="submit" class="btn-send">Enviar</button>
-                  <button type="reset" class="btn-clear">Limpiar</button>
+                <div class="user-content">
+                  <i class="fas fa-user-circle"></i>
+                  <input type="text" id="question-user" disabled="disabled">
+                  <script>
+                    document.getElementById(
+                      "question-user"
+                    ).value = localStorage.getItem("user");
+                  </script>
+                  </input>
                 </div>
-              </form>
+                <div class="date-content">
+                  <i class="fas fa-calendar-alt"></i>
+                  <input type="text" id="question-dateUser" disabled="disabled">
+                </div>
+                <textarea id="contenido" rows="5" placeholder="Escribe tu consulta..." required></textarea>
             </div>
-          </div>-->
+            <div class="btnFNquestion">
+              <button type="submit" class="btn-send"
+                onclick="alert('!Lo siento, todavía no funciona cargar la consulta nueva, en la próxima entrega estará listo!!')">Enviar</button>
+              <button type="reset" class="btn-clear" onclick="limpiar()">Limpiar</button>
+            </div>
+            </form>
+          </section>
         </div>
-      </dl>
-      <hr>
-      <div class="contenedor-btnVer">
-        <i class="fas fa-arrow-circle-left"></i>
-        <a type="button" id="ver-productos" class="btn btn-light btn-lg btn-block" href="products.html">Ver
-          productos</a>
-      </div>
+    </div>
+    </dl>
+    <hr>
+    <div class="contenedor-btnVer">
+      <i class="fas fa-arrow-circle-left"></i>
+      <a type="button" id="ver-productos" class="btn btn-light btn-lg btn-block" href="products.html">Ver
+        productos</a>
+    </div>
     </div>
   </main>
 

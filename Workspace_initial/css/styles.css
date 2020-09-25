@@ -1,5 +1,23 @@
 /* ----- PÁGINA ----- */
 
+.alert-ul li {
+  text-align: left;
+  padding-left: 20%;
+  padding-right: 10%;
+  margin-top: 5px;
+  background-color: #ce5757;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.alert-success ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: auto;
+}
+
 /* ----- IR ARRIBA (icono) ----- */
 
 .go-top {
@@ -65,13 +83,6 @@
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
@@ -135,8 +146,9 @@
   font-size: 40px;
 }
 
-.icono-eMERCADO p {
+.icono-eMERCADO a {
   text-align: center;
+  text-decoration: none;
   color: #fff;
   font-size: 22px;
   margin: 0;
@@ -376,7 +388,7 @@ a.custom-card, a.custom-card:hover {
 
 /*-- Texto del comentario (precargado) --*/
 
-.p-comment {
+.p-comment, .p-question {
   font-size: 20px;
   font-style: italic;
   color: #495057
@@ -413,24 +425,24 @@ a.custom-card, a.custom-card:hover {
 
 /*-- Pestaña (título) de Comentarios y de Preguntas --*/
 
-#subtitle {
+.t-comentarios #subtitle {
   padding: 10px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-weight: 700;
   font-size: 18px;
   text-decoration: none;
-  color: #fff;
-  background-color: #344059;
-}
-
-#subtitle:hover {
-  text-decoration: none;
   background-color: #ced4da;
   color: #343a40;
 }
 
-#nuevo-comentario {
+.t-comentarios a.active {
+  text-decoration: none !important;
+  color: #fff !important;
+  background-color: #344059 !important;
+}
+
+#nuevo-comentario, #nueva-pregunta {
   width: 100%;
 }
 
@@ -468,7 +480,7 @@ a.custom-card, a.custom-card:hover {
 
 /*--input --*/
 
-#comment-user, .comment-dateUser, #question-user {
+#comment-user, .comment-dateUser, #question-user, .question-dateUser {
   outline: none;
   width: 100%;
   text-indent: 5px;
@@ -548,13 +560,13 @@ input[type="radio"]:checked~label {
 
 /*-- Contenedor de Botones del form Comentario y Preguntas --*/
 
-.btnFNcomment {
+.btnFNcomment, .btnFNquestion {
   width: 100%;
   display: inline-block;
   text-align: center;
 }
 
-.btnFNcomment button {
+.btnFNcomment button, .btnFNquestion button {
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
@@ -562,7 +574,7 @@ input[type="radio"]:checked~label {
   background-color: #ced4da;
 }
 
-.btnFNcomment button:hover {
+.btnFNcomment button:hover, .btnFNquestion button:hover {
   background-color: #344059;
   color: #fff;
   transition: 0.5s;
@@ -586,7 +598,7 @@ input[type="radio"]:checked~label {
   color: #000;
 }
 
-#user-comment, #question-user {
+#user-comment, #user-question {
   font-weight: 700;
   color: #495057
 }
@@ -675,4 +687,15 @@ footer p {
   background-color: #344059 !important;
 }
 
-/* ----- </ Footer ----- */
+/* ----- MEDIAQUIERES ----- */
+
+/* ----- MEDIAQUIERES ----- */
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ----- </Mediaquieres ----- */

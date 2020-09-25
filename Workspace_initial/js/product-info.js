@@ -127,28 +127,20 @@ getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
 
 //arreglo.push(nuevoElemento);
 
-//Función para mostrar las preguntas
-//Crear array estilo JSON para las preguntas
-/*function showQuestions(array) {
-  let htmlContentToAppend = "";
+//Función para mostrar las preguntas...
+//cuando el documento este cargado..
+$(document).ready(function () {
+  $('.t-comentarios a:first').addClass('active');
+  $('#seccion-2').hide();
+  $('#seccion-1').show();
 
-  for (let i = 0; i < array.length; i++) {
-    let question = array[i];
-    htmlContentToAppend += `
-            <div class="card mb-2">
-                <div class="d-block">
-                    <div class="card-header align-user w-100">
-                    <div class="col m-0 pl-0" id="user-question">`+ question.user + '</div>
-                    </div>
-                </div>
-                <div class="card-body ">
-                    <blockquote class="blockquote mb-0">
-                    <div class="blockquote-footer text-right m-0">`+ question.dateTime + `</div>
-                    <p class="p-question">"`+ question.description + `"</p>
-                    </blockquote>
-                </div>
-            </div>
-            `
-    document.getElementById("preguntas").innerHTML = htmlContentToAppend;
-  }
-}*/
+  $('.t-comentarios a').click(function () {
+    $('.t-comentarios a').removeClass('active');
+    $(this).addClass('active');
+    $('.seccion-comentarios section').hide();
+
+    var activeTab = $(this).attr('href');
+    $(activeTab).show();
+    return false;
+  });
+});

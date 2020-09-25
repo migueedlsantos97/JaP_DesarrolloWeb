@@ -6,16 +6,29 @@ let menuContent = document.querySelector(".site-header");
 var activador = true;
 
 //Intercala clase "activa"
-let enlaces = document.querySelectorAll(".list li a");
-//utilizamos bucle (forEach), permite recorrer arreglos
-enlaces.forEach((element) => {
-  element.addEventListener("click", (event) => {
-    //al hacer click recorre el arreglo element
-    enlaces.forEach((link) => {
-      //parametro link para recorrer los enlaces
-      link.classList.remove("active"); //al hacer click remueve la clase
-    });
-    event.target.classList.add("active");
+// let enlaces = document.querySelectorAll('.site-header .container ul li a');
+// //utilizamos bucle (forEach), permite recorrer arreglos
+// enlaces.forEach((element) => {
+//   element.addEventListener('click', (event) => {
+//     //al hacer click recorre el arreglo element
+//     enlaces.forEach((link) => {
+//       //parametro link para recorrer los enlaces
+//       link.classList.remove('active'); //al hacer click remueve la clase
+//     });
+//     event.target.classList.add('active');
+//   });
+// });
+
+$(document).ready(function () {
+  $('.site-header .container ul li a:first').addClass('active');
+
+  $('.site-header .container ul li a').click(function () {
+    $('.site-header .container ul li a').removeClass('active');
+    $(this).addClass('active');
+
+    var activeTab = $(this).attr('href');
+    $(activeTab).show();
+    return false;
   });
 });
 
