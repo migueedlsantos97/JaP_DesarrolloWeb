@@ -35,7 +35,10 @@ const validarFormulario = (e) => {
     localStorage.setItem("estaLogueado", logueado);
     localStorage.setItem("user", usuario.value);
   }
+
 };
+
+
 //si los campos son correctos aparece la "palomita verde", sino, aparece la "x roja".
 const validarCampo = (expresion, input, campo) => {
   if (expresion.test(input.value)) {
