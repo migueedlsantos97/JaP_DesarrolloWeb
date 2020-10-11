@@ -33,7 +33,7 @@ const validarFormulario = (e) => {
     logueado = "true";
     localStorage.setItem("estaLogueado", logueado);
     localStorage.setItem("user", usuario.value);
-    window.location.replace("./index.html");
+    window.location.replace("./inicio.html");
   }
 
 };
@@ -116,5 +116,5 @@ function cerrarSesion() {
   alert(
     "Esperemos vuelva pronto para disfrutar de más productos y obtener increíbles ofertas!!"
   );
-  location.replace("./login.html");
+  location.replace("./index.html");
 }
