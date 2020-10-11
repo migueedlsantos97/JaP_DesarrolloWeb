@@ -29,15 +29,16 @@ const validarFormulario = (e) => {
   }
   if (usuario === "" || password === "") {
     alert("Debe ingresar usuario y contraseña");
-    return false;
   } else {
     logueado = "true";
     localStorage.setItem("estaLogueado", logueado);
     localStorage.setItem("user", usuario.value);
+    window.location.replace("./index.html");
   }
 
 };
 
+//
 
 //si los campos son correctos aparece la "palomita verde", sino, aparece la "x roja".
 const validarCampo = (expresion, input, campo) => {

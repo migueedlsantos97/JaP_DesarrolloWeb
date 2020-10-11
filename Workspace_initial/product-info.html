@@ -13,6 +13,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/f92d31b3ce.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -62,6 +63,29 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" id="c-sesion" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
         </div>
+        <div class="navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a href=""><i class="fas fa-shopping-cart"></i></a>
+              <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                <table id="lista-carrito" class="table">
+                  <thead>
+                    <tr>
+                      <th>Imágen</th>
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <a href="#" id="vaciar-carrito" class="btn btn.primary bnt-block">Vaciar carrito</a>
+                <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar compra</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </ul>
     </div>
   </nav>
@@ -92,6 +116,11 @@
               <dt class="subtitle">Cantidad de unidades vendidas</dt>
               <dd>
                 <p id="productSoldCount"></p>
+              </dd>
+            </div>
+            <div class="comprar-articulo">
+              <dd>
+                <a href="#" class="btn btn-block btn-primary agregar-carrito">Agregar al carrito</a>
               </dd>
             </div>
           </div>

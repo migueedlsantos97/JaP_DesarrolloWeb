@@ -58,6 +58,29 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" id="c-sesion" href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
         </div>
+        <div class="navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a href=""><i class="fas fa-shopping-cart"></i></a>
+              <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                <table id="lista-carrito" class="table">
+                  <thead>
+                    <tr>
+                      <th>Imágen</th>
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <a href="#" id="vaciar-carrito" class="btn btn.primary bnt-block">Vaciar carrito</a>
+                <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar compra</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </ul>
     </div>
   </nav>
@@ -166,7 +189,6 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
-  <script src="js/redireccion.js"></script>
   <script src="js/nav-classActive.js"></script>
 </body>
 

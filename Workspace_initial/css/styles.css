@@ -161,6 +161,7 @@
 }
 
 .site-header .container ul li a {
+  width: 100%;
   text-decoration: none;
   display: inline-block;
   margin: 0px 30px;
@@ -699,3 +700,59 @@ footer p {
 }
 
 /* ----- </Mediaquieres ----- */
+
+/* ----- CARRITO ----- */
+
+.comprar-articulo {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.comprar-articulo a {
+  width: 60%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: #ced4da;
+  color: #000;
+}
+
+.comprar-articulo a:hover {
+  background-color: #344059;
+  color: #fff;
+  transition: 0.5s;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-top {
+  width: 250px;
+  margin: auto;
+}
+
+.card-text {
+  width: 230px;
+}
+
+.centrado {
+  display: block;
+  margin: auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.f-align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-card-cart {
+  background-color: rgb(241, 241, 241);
+}
+
+.bg-red {
+  background-color: rgba(252, 0, 0, 0.192);
+}

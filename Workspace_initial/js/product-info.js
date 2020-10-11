@@ -65,32 +65,6 @@ function ratingStars(rating) {
   return stars;
 }
 
-
-//Funcion que crea el rating de "caritas" para la calificación
-//rating = 0; Face:"meh-blank";
-//rating = 1; Face:"angry";Text:"Muy malo"
-//rating = 2; Face:"frown";Text:"Malo"
-//rating = 3; Face:"meh";Text:"Aceptable"
-//rating = 4; Face:"grin-alt";Text:"Muy bueno"
-//rating = 5; Face:"grin-stars";Text:"Excelente"
-/*function ratingFaces(rating) {
-  let faces;
-  if (rating === 0) {
-    faces = '<span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span>'
-  } else if (rating === 1) {
-    faces = '<span id="faces"><i class="far fa-angry"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span>'
-  } else if (rating === 2) {
-    faces = '<span id="faces"><i class="far fa-frown"></i></span><span id="faces"><i class="far fa-frown"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span>'
-  } else if (rating === 3) {
-    faces = '<span id="faces"><i class="far fa-meh"></i></span><span id="faces"><i class="far fa-meh"></i></span><span id="faces"><i class="far fa-meh"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span>'
-  } else if (rating === 4) {
-    faces = '<span id="faces"><i class="far fa-grin-alt"></i></span><span id="faces"><i class="far fa-grin-alt"></i></span><span id="faces"><i class="far fa-grin-alt"></i></span><span id="faces"><i class="far fa-grin-alt"></i></span><span id="faces"><i class="far fa-meh-blank"></i></span>'
-  } else {
-    faces = '<span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span><span id="faces"><i class="far fa-grin-stars"></i></span>'
-  }
-  return faces;
-}*/
-
 let showStars;
 //Función para mostrar los comentarios
 function showComments(array) {
