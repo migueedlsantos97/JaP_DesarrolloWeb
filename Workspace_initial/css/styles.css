@@ -158,13 +158,13 @@
 
 .site-header .container ul li {
   list-style: none;
+  margin: 0px 30px;
 }
 
 .site-header .container ul li a {
   width: 100%;
   text-decoration: none;
   display: inline-block;
-  margin: 0px 30px;
   padding: 8px;
   color: #ffff;
   border-radius: 24px;
@@ -541,7 +541,7 @@ input[type="radio"] {
 
 label {
   color: grey;
-  font-size: 30px;
+  /* font-size: 30px; */
 }
 
 label:hover, label:hover~label {
