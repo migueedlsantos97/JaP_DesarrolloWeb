@@ -84,31 +84,359 @@
     </div>
   </nav>
   <!--Inicio del Contenido de la página-->
-  <main role="main" class="pb-5">
+  <div class="container p-5">
     <div class="text-center p-4">
-      <h2>Carrito de compras</h2>
+      <h2>Articulos del Carrito</h2>
+      <p class="lead">Encontrarás aquí toda la información de los productos seleccionados.</p>
     </div>
-    <div class="container">
-      <div id="cart-articles">
-
+    <table class="table table-warning">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Articulos</th>
+          <th scope="col">Precio unit</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">SubTotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img id="img" src="img/tree1.jpg" width="100" height="100" class="img-thumbnail"></td>
+          <th scope="row" id="art"></th>
+          <td id="costoUnit"></td>
+          <td><input id="numero" type="number" class="center" style="height: 30px; width: 40px;" type="form-control"
+              min="0" value=""></td>
+          <td id="subTotal"></td>
+        </tr>
+        <tr>
+          <td><img id="img2" src="img/prod3.jpg" width="100" height="100" class="img-thumbnail"></td>
+          <th scope="row" id="art2"></th>
+          <td id="costoUnit2"></td>
+          <td><input id="numero2" type="number" class="center" style="height: 30px; width: 40px;" type="form-control"
+              min="0" value=""></td>
+          <td id="subTotal2"></td>
+        </tr>
+    </table>
+    <hr class="mb-4">
+    <h5 class="mb-3">Tipo de publicación</h5>
+    <div class="d-block my-3">
+      <div class="custom-control custom-radio">
+        <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked=""
+          required="">
+        <label class="custom-control-label" for="premiumradio">Premium 2 a 5 dias (15%)</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+        <label class="custom-control-label" for="expressradio">Express 5 a 8 dias (7%)</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+        <label class="custom-control-label" for="standardradio">Estándar 12 a 15 dias (5%)</label>
       </div>
     </div>
-  </main>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <hr class="mb-4">
+    <h5 class="mb-3">Datos de Envios</h5>
+    <form class="form-group">
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label>Calle</label>
+          <input id="calle" type="text" class="form-control">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Numero</label>
+          <input id="numeroL" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label>Esquina</label>
+          <input id="esquina" type="text" class="form-control">
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label>Ciudad</label>
+            <input id="Ciudad" type="text" class="form-control">
+          </div>
+        </div>
+        <select name="OS">
+          <option selected value="0"> Departamento </option>
+          <option value="1">Artigas</option>
+          <option value="2">Canelones</option>
+          <option value="3">Cerro Largo</option>
+          <option value="4">Colonia</option>
+          <option value="5">Durazno</option>
+          <option value="6">Flores</option>
+          <option value="7">Florida</option>
+          <option value="8">Lavalleja</option>
+          <option value="9">Maldonado</option>
+          <option value="10">Montevideo</option>
+          <option value="11">Paysandú</option>
+          <option value="12">Río Negro</option>
+          <option value="13">Rivera</option>
+          <option value="14">Rocha</option>
+          <option value="15">Salto</option>
+          <option value="16">San José</option>
+          <option value="17">Soriano</option>
+          <option value="18">Tacuarembó</option>
+          <option value="19">Treinta y Tres</option>
+          </optgroup>
+        </select>
+    </form>
   </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/nav-classActive.js"></script>
+  <hr class="mb-4">
+  <h4 class="mb-3">Costos</h4>
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-0">SubTotal</h6>
+        <small class="text-muted">costo unitario del producto por cantidad</small>
+      </div>
+      <span class="text-muted" id="subtotalText">-</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-0">Costo de envio</h6>
+        <small class="text-muted">Según el tipo de envio</small>
+      </div>
+      <span class="text-muted" id="envioText">-</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Total ($)</span>
+      <strong id="totalCostText">-</strong>
+    </li>
+    <hr>
+    <div class="box ">
+      <!-- Formulario para pago de las compras    -->
+    </div>
+    <div div.play , div.pause , div.stop , div.previous , div.next { display: inline; }class="pull-right">
+      <button type="button" class="btn btn-success " data-toggle="modal" data-target="#modal">Pagar con
+        Transferencia</button>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <section>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card wish-list pb-1">
+                  <div class="card-body" style="width:35em;">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="md-form md-outline mb-0 mb-lg-4">
+                          <label for="nombre">Nombre del Titular</label>
+                          <input type="text" placeholder="Nombres" class="form-control mb-0 mb-lg-2" required>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="md-form md-outline">
+                          <label for="apellido">Apellido</label>
+                          <input type="text" placeholder="Apellidos" class="form-control" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                      <label>Seleccione un banco</label>
+                      <div class="select-outline position-relative w-100">
+                        <select class="mdb-select md-form md-outline dropdown-item" style=" border: 1px solid #ced4da;
+                                border-radius:  .25rem; padding: .375rem .75rem; margin-bottom:1em !important;"
+                          required>
+                          <option value="" disabled selected>Banco</option>
+                          <option value="Brou">Brou</option>
+                          <option value="Itau">Itau</option>
+                          <option value="Santander">Santander</option>
+                          <option value="Santander">HSBC</option>
+                          <option value="Santander">Scotiabank</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="md-form md-outline mt-0">
+                      <label for="cuentaOrigen">Cuenta origen</label>
+                      <input type="text" placeholder=" Cuenta de Origen" class="form-control" maxlength="12"
+                        style="margin-bottom:1em !important;" required>
+                    </div>
+                    <div class="md-form md-outline mt-0">
+                      <label for="destino">Cuenta destino</label>
+                      <input type="text" placeholder="Cuenta de Destino" class="form-control"
+                        style="margin-bottom:1em !important;" required>
+                    </div>
+                    <div class="md-form md-outline mt-0">
+                      <label for="telefono">Teléfono de Contacto</label>
+                      <input type="tel" class="form-control" maxlenght="9" style="margin-bottom:1em !important;"
+                        required=>
+                    </div>
+                    <div class="md-form md-outline mt-0">
+                      <label for="email">Email de contacto:</label>
+                      <input type="email" class="form-control" style="margin-bottom:1em !important;" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Realizar Pago</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+  <hr class="mb-4">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Comprar
+  </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-warning" id="exampleModalLabel">Confirmacion de Compra</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <h5 id="modalTitle" class="text-warning"></h5>
+            <p id="detalleCompra" class="font-weight-bold text-danger"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button id="comprarBtn" type="button" class="btn btn-primary" data-dismiss="modal"
+              onclick="btnAceptar()">Aceptar</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Pago con Tarjeta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+              </div>
+              <div class="contenedor">
+                -->
+                <!-- Tarjeta -->
+                <section class="tarjeta" id="tarjeta">
+                  <div class="delantera">
+                    <div class="logo-marca" id="logo-marca">
+
+                    </div>
+                    <img src="img/chip-tarjeta.png" class="chip" alt="">
+                    <div class="datos">
+                      <div class="grupo" id="numero">
+                        <p class="label">Número Tarjeta</p>
+                        <p class="numero">#### #### #### ####</p>
+                      </div>
+                      <div class="flexbox">
+                        <div class="grupo" id="nombre">
+                          <p class="label">Nombre Tarjeta</p>
+                          <p class="nombre">ES LA 3</p>
+                        </div>
+
+                        <div class="grupo" id="expiracion">
+                          <p class="label">Expiracion</p>
+                          <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="trasera">
+                    <div class="barra-magnetica"></div>
+                    <div class="datos">
+                      <div class="grupo" id="firma">
+                        <p class="label">Firma</p>
+                        <div class="firma">
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="grupo" id="ccv">
+                        <p class="label">CCV</p>
+                        <p class="ccv"></p>
+                      </div>
+                    </div>
+                    <p class="leyenda">El uso de esta tarjeta se rige por los terminos y condiciones que se estipulan en
+                      el contrato oportunamente suscripto. De hallarse esta Tarjeta se agradecera devolverla.</p>
+                    <a href="#" class="link-banco">www.eCommerce.com</a>
+                  </div>
+                </section>
+
+                <!-- Contenedor Boton Abrir Formulario -->
+                <div class="contenedor-btn">
+                  <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+
+                <!-- Formulario -->
+                <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+                  <div class="grupo">
+                    <label for="inputNumero">Número Tarjeta</label>
+                    <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                  </div>
+                  <div class="grupo">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                  </div>
+                  <div class="flexbox">
+                    <div class="grupo expira">
+                      <label for="selectMes">Expiracion</label>
+                      <div class="flexbox">
+                        <div class="grupo-select">
+                          <select name="mes" id="selectMes">
+                            <option disabled selected>Mes</option>
+                          </select>
+                          <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="grupo-select">
+                          <select name="year" id="selectYear">
+                            <option disabled selected>Año</option>
+                          </select>
+                          <i class="fas fa-angle-down"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="grupo ccv">
+                      <label for="inputCCV">CCV</label>
+                      <input type="text" id="inputCCV" maxlength="3">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn-enviar">Realizar Pago</button>
+                </form>
+              </div>
+              >
+
+            </div>
+            <div id="spinner-wrapper">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <script src="js/jquery-3.4.1.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/dropzone.js"></script>
+            <script src="js/init.js"></script>
+            <script src="js/cart.js"></script>
+            <script src="js/login.js"></script>
+            <script src="js/nav-classActive.js"></script>
 </body>
 
 </html>
