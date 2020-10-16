@@ -408,6 +408,21 @@ a.custom-card, a.custom-card:hover {
   z-index: 5;
 }
 
+.agregar-carrito {
+  width: 200px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #344059;
+  background-color: #ced4da;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.agregar-carrito:hover {
+  background-color: #344059;
+  color: #ced4da;
+}
+
 /*-- Visualización de Comentarios y de Preguntas --*/
 
 .v-comentarios, .v-preguntas {
@@ -703,69 +718,89 @@ footer p {
 
 /* ----- CARRITO ----- */
 
-.comprar-articulo {
-  margin-left: 10px;
-  width: 100%;
-}
-
-.comprar-articulo a {
-  width: 60%;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  background-color: #ced4da;
-  color: #000;
-}
-
-.comprar-articulo a:hover {
-  background-color: #344059;
-  color: #fff;
-  transition: 0.5s;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-}
-
-.card-img-top {
-  width: 250px;
-  margin: auto;
-}
-
-.card-text {
-  width: 230px;
-}
-
-.centrado {
-  display: block;
-  margin: auto;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.f-align-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bg-card-cart {
-  background-color: rgb(241, 241, 241);
-}
-
-.bg-red {
-  background-color: rgba(252, 0, 0, 0.192);
-}
-
-#container-article {
+.table-art {
   margin: 0 auto;
-  max-width: 700px;
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  border: solid 1px #a6033f;
+  border-radius: 10px;
 }
 
-#card-article {
-  border: #000;
+.table-art .thead {
+  width: 100%;
+  background-color: #a6033f;
+  color: #fff;
 }
 
-#container-img {
-  max-width: 100px;
+.table-art .thead tr {
+  width: 100%;
+  text-align: center;
+  border: solid 1px #a6033f;
+}
+
+.table-art .thead .th-head1 {
+  border-right: solid 1px #fff;
+}
+
+.table-art .thead .th-head2 {
+  border-right: solid 1px #fff;
+}
+
+.table-art .thead .th-head3 {
+  border-right: solid 1px #fff;
+}
+
+.table-art .thead .th-head4 {
+  border-right: solid 1px #fff;
+}
+
+.table-art tr {
+  width: 100%;
+  text-align: center;
+}
+
+tbody .td-img {
+  width: 100px;
+}
+
+tbody tr, tbody td {
+  border: solid 1px #df8eab;
+}
+
+#btn-condition{
+ 
+    width: 200px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #344059;
+    background-color: #ced4da;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .agregar-carrito:hover {
+    background-color: #344059;
+    color: #ced4da;
+  }
+}
+
+#Calle {
+  margin-right: 10px;
+}
+
+#calle {
+  width: 400px;
+}
+
+#numeroL {
+  width: 100px;
+}
+
+#esquina {
+  width: 400px;
+}
+
+#Ciudad {
+  width: 200px;
 }

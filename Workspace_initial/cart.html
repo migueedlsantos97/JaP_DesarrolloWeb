@@ -87,21 +87,21 @@
   <div class="container p-5">
     <div class="text-center p-4">
       <h2>Articulos del Carrito</h2>
-      <p class="lead">Encontrarás aquí toda la información de los productos seleccionados.</p>
+      <p class="lead">Aquí podrán ver y gestionar los artículos añadidos.</p>
     </div>
-    <table class="table table-warning">
-      <thead class="thead-dark">
+    <table class="table-art">
+      <thead class="thead">
         <tr>
-          <th scope="col"></th>
-          <th scope="col">Articulos</th>
-          <th scope="col">Precio unit</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">SubTotal</th>
+          <th scope="col" class="th-head1"></th>
+          <th scope="col" class="th-head2">Artículo</th>
+          <th scope="col" class="th-head3">Precio unitario</th>
+          <th scope="col" class="th-head4">Cantidad</th>
+          <th scope="col" class="th-head5">SubTotal</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><img id="img" src="img/tree1.jpg" width="100" height="100" class="img-thumbnail"></td>
+          <td class="td-img"><img id="img" src="img/tree1.jpg" width="100" height="100" class="img-thumbnail"></td>
           <th scope="row" id="art"></th>
           <td id="costoUnit"></td>
           <td><input id="numero" type="number" class="center" style="height: 30px; width: 40px;" type="form-control"
@@ -121,39 +121,90 @@
     <h5 class="mb-3">Tipo de publicación</h5>
     <div class="d-block my-3">
       <div class="custom-control custom-radio">
-        <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked=""
-          required="">
-        <label class="custom-control-label" for="premiumradio">Premium 2 a 5 dias (15%)</label>
+        <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="" />
+        <label class="custom-control-label" for="goldradio">Gold (13%)</label>
       </div>
       <div class="custom-control custom-radio">
-        <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
-        <label class="custom-control-label" for="expressradio">Express 5 a 8 dias (7%)</label>
+        <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="" />
+        <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
       </div>
       <div class="custom-control custom-radio">
-        <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-        <label class="custom-control-label" for="standardradio">Estándar 12 a 15 dias (5%)</label>
+        <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="" />
+        <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+      </div>
+      <div class="row">
+        <button type="button" id="btn-condition" class="m-1 btn btn-link" data-toggle="modal"
+          data-target="#contidionsModal">
+          Ver condiciones
+        </button>
+      </div>
+      <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Condiciones de publicación</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <h5 class="text-warning">Gold (13%)</h5>
+                  <p class="muted text-justify">
+                    Tu producto se verá de forma promocionada en portada, además
+                    de las condiciones de Premium y Estándar.
+                  </p>
+                </div>
+                <hr />
+                <div class="row">
+                  <h5 class="text-primary">Stándar (7%)</h5>
+                  <p class="muted text-justify">
+                    Se mostrará el producto en los primeros lugares de resultados
+                    de búsqueda, así cómo cuando se ingrese a la categoría que
+                    pertenezca.
+                  </p>
+                </div>
+                <hr />
+                <div class="row">
+                  <h5 class="text-secondary">Estándar (3%)</h5>
+                  <p class="muted text-justify">
+                    El producto se listará en la categoría correspondiente, así
+                    como en los resultados de búsquedas que coincidan con las
+                    palabras claves en el nombre.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <hr class="mb-4">
     <h5 class="mb-3">Datos de Envios</h5>
     <form class="form-group">
       <div class="form-row">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-5 mb-3" id="Calle">
           <label>Calle</label>
           <input id="calle" type="text" class="form-control">
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-5 mb-3">
           <label>Numero</label>
           <input id="numeroL" type="text" class="form-control">
         </div>
       </div>
       <div class="form-row">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-5 mb-3">
           <label>Esquina</label>
           <input id="esquina" type="text" class="form-control">
         </div>
         <div class="form-row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-5 mb-3">
             <label>Ciudad</label>
             <input id="Ciudad" type="text" class="form-control">
           </div>
@@ -179,7 +230,6 @@
           <option value="17">Soriano</option>
           <option value="18">Tacuarembó</option>
           <option value="19">Treinta y Tres</option>
-          </optgroup>
         </select>
     </form>
   </div>

@@ -197,7 +197,7 @@ svg {
 }
 
 table {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
 }
 
 caption {
@@ -1475,7 +1475,7 @@ pre code {
   }
 }
 
-.table {
+/* .table {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
@@ -1494,9 +1494,9 @@ pre code {
 
 .table tbody+tbody {
   border-top: 2px solid #dee2e6;
-}
+} */
 
-.table-sm td, .table-sm th {
+/* .table-sm td, .table-sm th {
   padding: 0.3rem;
 }
 
@@ -1506,8 +1506,9 @@ pre code {
 
 .table-bordered td, .table-bordered th {
   border: 1px solid #dee2e6;
-}
+} */
 
+/* 
 .table-bordered thead td, .table-bordered thead th {
   border-bottom-width: 2px;
 }
@@ -1697,7 +1698,7 @@ pre code {
 .table-dark.table-hover tbody tr:hover {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.075);
-}
+} */
 
 @media (max-width: 575.98px) {
   .table-responsive-sm {

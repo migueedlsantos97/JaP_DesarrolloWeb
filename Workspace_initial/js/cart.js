@@ -168,11 +168,10 @@ function actualizarCostos() {
 
 
     let detalleHtml = document.getElementById("detalleCompra");
-    detalleHtml.innerHTML = ` Total a pagar $ ` + totalEnvioHTML;
+    detalleHtml.innerHTML = ` Total a pagar U$ ` + totalEnvioHTML;
 
 
 }
-
 
 
 //funcion que se ejecuta cuando se hace click en el boton aceptar
@@ -198,7 +197,7 @@ function btnAceptar() {
 document.addEventListener("DOMContentLoaded", function (e) {
 
 
-    //funcion que trae el numero del input, se lo paso a una variable  e imprimo en otro id el monto.
+    //Función que trae el valor del input donde se elige la cantidad de articulos a comprar y lo multiplica por el valor del costo Unitario.
     document.getElementById("numero").addEventListener("change", function () {
         var num = document.getElementById("numero").value;
 
@@ -219,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         impSub2.innerHTML = (40 * 12500) * num2;
         subT2 = (Math.round(12500 * 40) * impSub2);
 
-        subT2 = this.value;
+        subT2 = ` U$ ` + this.value;
         actualizarCostos();
 
     });
@@ -252,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 document.addEventListener("DOMContentLoaded", function (ex) {
-    getJSONData(ARTICLES_CART).then(function (res) {
+    getJSONData(CART_INFO_URL).then(function (res) {
         if (res.status === "ok") {
             art = res.data;
 
