@@ -768,21 +768,25 @@ tbody tr, tbody td {
   border: solid 1px #df8eab;
 }
 
-#btn-condition{
- 
-    width: 200px;
-    margin-left: 10px;
-    text-decoration: none;
-    color: #344059;
-    background-color: #ced4da;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .agregar-carrito:hover {
-    background-color: #344059;
-    color: #ced4da;
-  }
+#eliminar-Art {
+  color: red;
+}
+
+#btn-condition {
+  width: 200px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #344059;
+  background-color: #ced4da;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.agregar-carrito:hover {
+  background-color: #344059;
+  color: #ced4da;
+}
+
 }
 
 #Calle {

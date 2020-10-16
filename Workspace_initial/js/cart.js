@@ -174,34 +174,17 @@ function actualizarCostos() {
 }
 
 
-//funcion que se ejecuta cuando se hace click en el boton aceptar
-function btnAceptar() {
 
-    document.getElementById("calle").value = "";
-    document.getElementById("numeroL").value = "";
-    document.getElementById("esquina").value = "";
-    document.getElementById("detalleCompra").innerHTML = '';
-    document.getElementById("subtotalText").innerHTML = 0;
-    document.getElementById("envioText").innerHTML = 0;
-    document.getElementById("totalCostText").innerHTML = 0;
-    document.getElementById("numero").value = 0;
-    document.getElementById("numero2").value = 0;
-    document.getElementById("subTotal").innerHTML = 0;
-    document.getElementById("subTotal2").innerHTML = 0;
-
-
-
-}
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
 
     //Función que trae el valor del input donde se elige la cantidad de articulos a comprar y lo multiplica por el valor del costo Unitario.
-    document.getElementById("numero").addEventListener("change", function () {
-        var num = document.getElementById("numero").value;
+    document.getElementById("cantidad-Art").addEventListener("change", function () {
+        var num = document.getElementById("cantidad-Art").value;
 
-        impSubtotal = document.getElementById("subTotal");
+        impSubtotal = document.getElementById("subTotal-Art");
         impSubtotal.innerHTML = num * 100;
         subT = 100 * num;
         subT = this.value
@@ -210,15 +193,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     });
 
-    //funcion que trae el numero del input, se lo paso a una variable  e imprimo en otro id el monto.
-    document.getElementById("numero2").addEventListener("change", function () {
-        var num2 = document.getElementById("numero2").value;
+    //Función que trae el valor del segundo input donde se elige la cantidad de articulos a comprar y lo multiplica por el valor del costo Unitario.
+    document.getElementById("cantidad-Art2").addEventListener("change", function () {
+        var num2 = document.getElementById("cantidad-Art2").value;
 
-        impSub2 = document.getElementById("subTotal2");
-        impSub2.innerHTML = (40 * 12500) * num2;
-        subT2 = (Math.round(12500 * 40) * impSub2);
+        impSubTotal2 = document.getElementById("subTotal-Art2");
+        impSubTotal2.innerHTML = (40 * 12500) * num2;
+        subT2 = (Math.round(12500 * 40) * impSubTotal2);
 
-        subT2 = ` U$ ` + this.value;
+        subT2 = this.value;
         actualizarCostos();
 
     });
@@ -239,13 +222,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         actualizarCostos()
     });
 
-
-
-
-
-
-
-
 });
 
 
@@ -255,12 +231,12 @@ document.addEventListener("DOMContentLoaded", function (ex) {
         if (res.status === "ok") {
             art = res.data;
 
-            articulos = document.getElementById("art");
-            articulos2 = document.getElementById("art2");
-            precioUnit = document.getElementById("costoUnit");
-            precioUnit2 = document.getElementById("costoUnit2");
-            num = document.getElementById("numero");
-            num2 = document.getElementById("numero2");
+            articulos = document.getElementById("nombre-Art");
+            articulos2 = document.getElementById("nombre-Art2");
+            precioUnit = document.getElementById("costoUnit-Art");
+            precioUnit2 = document.getElementById("costoUnit-Art2");
+            num = document.getElementById("cantidad-Art");
+            num2 = document.getElementById("cantidad-Art2");
 
             for (let i = 0; i < art.articles.length; i++) {
                 articulos.innerHTML = art.articles[0].name;
@@ -280,3 +256,25 @@ document.addEventListener("DOMContentLoaded", function (ex) {
 
     })
 });
+
+
+
+
+//funcion que se ejecuta cuando se hace click en el boton aceptar
+function btnAceptar() {
+
+    document.getElementById("calle").value = "";
+    document.getElementById("numeroL").value = "";
+    document.getElementById("esquina").value = "";
+    document.getElementById("detalleCompra").innerHTML = '';
+    document.getElementById("subtotalText").innerHTML = 0;
+    document.getElementById("envioText").innerHTML = 0;
+    document.getElementById("totalCostText").innerHTML = 0;
+    document.getElementById("cantidad-Art").value = 0;
+    document.getElementById("cantidad-Art2").value = 0;
+    document.getElementById("subTotal-Art").innerHTML = 0;
+    document.getElementById("subTotal-Art2").innerHTML = 0;
+
+
+
+}

@@ -12,6 +12,7 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
 
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -87,7 +88,7 @@
   <div class="container p-5">
     <div class="text-center p-4">
       <h2>Articulos del Carrito</h2>
-      <p class="lead">Aquí podrán ver y gestionar los artículos añadidos.</p>
+      <p class="lead">Aquí podrá ver y gestionar los artículos añadidos.</p>
     </div>
     <table class="table-art">
       <thead class="thead">
@@ -97,40 +98,43 @@
           <th scope="col" class="th-head3">Precio unitario</th>
           <th scope="col" class="th-head4">Cantidad</th>
           <th scope="col" class="th-head5">SubTotal</th>
+          <th scope="col" class="th-head6"></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="td-img"><img id="img" src="img/tree1.jpg" width="100" height="100" class="img-thumbnail"></td>
-          <th scope="row" id="art"></th>
-          <td id="costoUnit"></td>
-          <td><input id="numero" type="number" class="center" style="height: 30px; width: 40px;" type="form-control"
-              min="0" value=""></td>
-          <td id="subTotal"></td>
+          <th scope="row" id="nombre-Art"></th>
+          <td id="costoUnit-Art"></td>
+          <td><input id="cantidad-Art" type="number" class="center" style="height: 30px; width: 40px;"
+              type="form-control" min="0" value=""></td>
+          <td id="subTotal-Art"></td>
+          <td><a href="#" id="eliminar-Art"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
         <tr>
           <td><img id="img2" src="img/prod3.jpg" width="100" height="100" class="img-thumbnail"></td>
-          <th scope="row" id="art2"></th>
+          <th scope="row" id="nombre-Art2"></th>
           <td id="costoUnit2"></td>
-          <td><input id="numero2" type="number" class="center" style="height: 30px; width: 40px;" type="form-control"
-              min="0" value=""></td>
-          <td id="subTotal2"></td>
+          <td><input id="cantidad-Art2" type="number" class="center" style="height: 30px; width: 40px;"
+              type="form-control" min="0" value=""></td>
+          <td id="subTotal-Art2"></td>
+          <td><a href="#" id="eliminar-Art"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
     </table>
     <hr class="mb-4">
-    <h5 class="mb-3">Tipo de publicación</h5>
+    <h5 class="mb-3">Tipo de envío</h5>
     <div class="d-block my-3">
       <div class="custom-control custom-radio">
         <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="" />
-        <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+        <label class="custom-control-label" for="goldradio">Gold (+13%)</label>
       </div>
       <div class="custom-control custom-radio">
         <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="" />
-        <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
+        <label class="custom-control-label" for="premiumradio">Premium (+7%)</label>
       </div>
       <div class="custom-control custom-radio">
         <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="" />
-        <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+        <label class="custom-control-label" for="standardradio">Estándar (+3%)</label>
       </div>
       <div class="row">
         <button type="button" id="btn-condition" class="m-1 btn btn-link" data-toggle="modal"
@@ -475,6 +479,7 @@
                 <div></div>
               </div>
             </div>
+            <script src="https://kit.fontawesome.com/f92d31b3ce.js" crossorigin="anonymous"></script>
             <script src="js/jquery-3.4.1.min.js"></script>
             <script src="js/bootstrap.bundle.min.js"></script>
             <script src="js/dropzone.js"></script>
