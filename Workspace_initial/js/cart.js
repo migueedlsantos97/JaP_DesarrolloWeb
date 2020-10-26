@@ -1,280 +1,293 @@
-// // class Carrito {
-// //     //Añadir el producto al carrito
-// //     comprarProducto(e) {
-// //         e.preventDefault();
-// //         if (e.target.classList.contains('agregar-carrito')) {
-// //             const producto = e.target.parentElement.parentElement;
-// //             this.leerDatosProducto(producto);
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
 
-// //         }
-// //     }
-// //     leerDatosProducto(producto) {
-// //         const infoProducto = {
-// //             imagen: producto.querySelector('img').src,
-// //             titulo: producto.querySelector('h4').textContent,
-// //             precio: producto.querySelector('.precio span').textContent,
-// //             id: producto.querySelector('a').getAttribute('data-id'),//sirve para eliminar dicho elemento del carrito.
-// //             cantidad: 1
-// //         }
-// //         this.insertarCarrito(infoProducto);
-// //     }
-// //     insertarCarrito(producto) {
-// //         const row = document.createElement('tr');
-// //         row.innerHTML = `
-// //             <td>
-// //                 <img src="${producto.imagen}"´widht=100>
-// //             </td>
-// //             <td>${producto.titulo}</td>
-// //             <td>${producto.precio}</td>
-// //             <td>
-// //                 <a href="#" class=" borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
-// //             </td>
-// //         `;
-// //         listaProductos.appendChild(row);
-// //     }
-// //     eliminarProducto(e) {
-// //         e.preventDefault();
-// //         let producto, productoID;
-// //         if (e.target.classList.contains('borrar-producto')) {
-// //             e.target.parentElement.parentElement.remove();
-// //             producto = e.target.parentElement.parentElement;
-// //             productoID = producto.querySelector('a').getAttribute('data-id');
-// //         }
-// //     }
-// //     vaciarCarrito(e) {
-// //         e.preventDefault();
-// //         while (listaProductos.firstChild) {
-// //             listaProductos.removeChild(listaProductos.firstChild);
-// //             return false;
-// //         }
-// //     }
-// // }
-
-// let cart = [];
-// let cantArticulos;
-
-// function showArticlesCart(array) {
-
-//     let htmlContentToAppend = "";
-
-//     for (let i = 0; i < array.length; i++) {
-//         let carrito = array[i];
-
-//         htmlContentToAppend += `
-
-//             <div id="container-article" class="card mb-3 w-100" style="max-height: 150px;">
-//                 <div id="card-article" class="row no-gutters w-100">
-//                     <div id="container-img" class="col-md-4 centrado" >
-//                     <img src="`+ carrito.src + `" class="card-img centrado" alt="" style="max-height: 150px; width: auto;">
-//                     </div>
-//                     <div class="col-md-8 bg-card-cart f-align-center">
-//                         <div class="card-body">
-//                             <div class="row centrado align-center pl-2">
-//                                 <div class="row align-center no-gutters">
-//                                     <h5>Nombre: </h5>
-//                                     <p class="h4 pl-2">`+ carrito.name + `</p>
-//                                 </div>
-//                                 <div class="row align-center no-gutters">
-//                                     <h5>Precio unitario: </h5>
-//                                     <p class="h4 pl-2" id="moneda`+ i + `"> ` + carrito.currency + ` </p>
-//                                     <p class="h4 pl-2 unitCost"> `+ carrito.unitCost + ` </p>
-//                                 </div>
-//                                 <div class="row align-center no-gutters">
-//                                     <h5>Cantidad: </h5>
-//                                     <input type="number" class="h4 pl-2 ml-2 " value="`+ carrito.count + `" onchange="calcNewSubTotal(this.value, ` + carrito.unitCost + `,` + i + `)" name="Cantidad` + i + `" min="0"> 
-//                                 </div>
-//                                 <div class="row align-center no-gutters bg-red pt-2">
-//                                     <h5>Total: </h5>
-//                                     <p class="h4 pl-2 " id="subTotal`+ i + `"> $` + PrecioTotal(carrito.currency, carrito.unitCost, carrito.count) + `  </p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         `
-
-//         document.getElementById("cart-articles").innerHTML = htmlContentToAppend;
-//     }
-// }
-
-// function PrecioTotal(moneda, cU, unidad) {
-//     if (moneda == "UYU") {
-//         let total = cU * unidad;
-//         return total;
-//     } else if (moneda == "USD") {
-//         cUPesos = cU * 40;
-//         let total = cUPesos * unidad;
-//         return total;
-//     }
-// }
-
-// function calcNewSubTotal(newCant, unitCost, i) {
-//     let moneda = document.getElementById("moneda" + i)
-//     document.getElementById("subTotal" + i).innerHTML = "$" + PrecioTotal(moneda.innerText, unitCost, newCant);
-// }
-
-
-// //Función que se ejecuta una vez que se haya lanzado el evento de
-// //que el documento se encuentra cargado, es decir, se encuentran todos los
-// //elementos HTML presentes.
-// document.addEventListener("DOMContentLoaded", function (e) {
-//     getJSONData(CART_INFO_URL).then(function (resultObj) {
-//         if (resultObj.status === "ok") {
-//             cart = resultObj.data;
-//         }
-//         showArticlesCart(cart.articles);
-//     });
-
-// });
-
-
-
-let articulos = {};
-let articulos2 = {};
-let precioUnit = 0;
-let precioUnit2 = 0;
-let num = 0;
-let num2 = 0;
-let impSubtotal = 0;
-let impSub2 = 0;
-
-let subT = 0;
-var subT2 = 0;
-var porcentajeEnvio = 0.15;
-
-
-
-
-function actualizarCostos() {
-
-    let subText = document.getElementById("subtotalText");
-    let envText = document.getElementById("envioText");
-    let totalText = document.getElementById("totalCostText");
-
-    //calculo el precio unitario del pino
-    var t1 = (subT * 100);
-    //calculo el precio unitario de autos y lo paso a pesos 
-    var t2 = (subT2 * 12500 * 40);
-    var t = (t2 + t1);
-
-    let subtextHTML = t;
-    let costoEnvioHTML = (porcentajeEnvio * t);
-    let totalEnvioHTML = Math.round(t + costoEnvioHTML);
-
-    subText.innerHTML = subtextHTML;
-    envText.innerHTML = costoEnvioHTML;
-    totalText.innerHTML = totalEnvioHTML;
-
-
-    let detalleHtml = document.getElementById("detalleCompra");
-    detalleHtml.innerHTML = ` Total a pagar U$ ` + totalEnvioHTML;
-
-
-}
-
-
-
-
+var articles = {};
 
 document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(CART_INFO_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            articles = resultObj.data.articles[0];
+        };
+        let nameArtHTML = document.getElementById("nombre-Art");
+        let cantidadArtHTML = document.getElementById("cantidad-Art").value;
+        let costArtHTML = document.getElementById("costoUnit-Art");
 
-
-    //Función que trae el valor del input donde se elige la cantidad de articulos a comprar y lo multiplica por el valor del costo Unitario.
-    document.getElementById("cantidad-Art").addEventListener("change", function () {
-        var num = document.getElementById("cantidad-Art").value;
-
-        impSubtotal = document.getElementById("subTotal-Art");
-        impSubtotal.innerHTML = num * 100;
-        subT = 100 * num;
-        subT = this.value
-
-        actualizarCostos();
-
+        //imprimo los resultados en los td de la tabla de articulos...
+        nameArtHTML.innerHTML = articles.name;
+        cantidadArtHTML.innerHTML = articles.count;
+        costArtHTML.innerHTML = `$` + " " + articles.unitCost;
     });
 
-    //Función que trae el valor del segundo input donde se elige la cantidad de articulos a comprar y lo multiplica por el valor del costo Unitario.
-    document.getElementById("cantidad-Art2").addEventListener("change", function () {
-        var num2 = document.getElementById("cantidad-Art2").value;
+    //cuando el valor de cantidad de artículos cambia se activa esta función...
+    document.addEventListener("change", function () {
+        var subTotalArt = document.getElementById("subTotal-Art");
+        var cantidadArt = document.getElementById("cantidad-Art").value;
+        var costoUnitArt = articles.unitCost;
 
-        impSubTotal2 = document.getElementById("subTotal-Art2");
-        impSubTotal2.innerHTML = (40 * 12500) * num2;
-        subT2 = (Math.round(12500 * 40) * impSubTotal2);
+        var SubTotal = cantidadArt * costoUnitArt;
+        subTotalArt.innerHTML = `U$` + " " + SubTotal;
 
-        subT2 = this.value;
-        actualizarCostos();
+        //actualización de los costos totales...
+        var subTFinal = document.getElementById("subtotalText");
+        var Total = document.getElementById("totalCostText");
 
-    });
+        //imprimo los resultados...
+        subTFinal.innerHTML = `U$` + " " + SubTotal;
+        seleccionEnvio();
 
+        //función para calcular el costo de envío en base al subTotal...
+        function seleccionEnvio() {
 
-    document.getElementById("premiumradio").addEventListener("change", function () {
-        porcentajeEnvio = 0.15;
-        actualizarCostos()
-    });
+            if (document.querySelector('input[name="envioType"]:checked') !== null) {
 
-    document.getElementById("expressradio").addEventListener("change", function () {
-        porcentajeEnvio = 0.07;
-        actualizarCostos()
-    });
+                let envioSelect = document.querySelector('input[name="envioType"]:checked').id;
+                let textoEnvio = document.getElementById("text-Envio");
 
-    document.getElementById("standardradio").addEventListener("change", function () {
-        porcentajeEnvio = 0.05;
-        actualizarCostos()
-    });
-
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function (ex) {
-    getJSONData(CART_INFO_URL).then(function (res) {
-        if (res.status === "ok") {
-            art = res.data;
-
-            articulos = document.getElementById("nombre-Art");
-            articulos2 = document.getElementById("nombre-Art2");
-            precioUnit = document.getElementById("costoUnit-Art");
-            precioUnit2 = document.getElementById("costoUnit-Art2");
-            num = document.getElementById("cantidad-Art");
-            num2 = document.getElementById("cantidad-Art2");
-
-            for (let i = 0; i < art.articles.length; i++) {
-                articulos.innerHTML = art.articles[0].name;
-                precioUnit.innerHTML = art.articles[0].currency + ` ` + art.articles[0].unitCost;
-                num.value = art.articles[0].count;
-
-                if (art.articles[i]) {
-
-                    articulos2.innerHTML = art.articles[i].name;
-                    precioUnit2.innerHTML = art.articles[i].currency + ` ` + art.articles[i].unitCost;
-                    num2.value = art.articles[i].count;
+                //al seleccionar un input radio se recalcula e imprime texto...
+                switch (envioSelect) {
+                    case "expressradio":
+                        totalEnvio = Math.round(SubTotal * 0.07);
+                        textoEnvio.innerText = "ha seleccionado: envío Express";
+                        break;
+                    case "standardradio":
+                        totalEnvio = Math.round(SubTotal * 0.03);
+                        textoEnvio.innerText = "ha seleccionado: envío Standar";
+                        break;
                 }
+            } else {
+                totalEnvio = 0;
             }
 
+            document.getElementById("envioText").innerHTML = `U$` + " " + totalEnvio;
+        };
+
+        var iva = document.getElementById("textIVA");
+        impIVA = Math.round(SubTotal * 0.22);
+        document.getElementById("textIVA").innerHTML = `U$` + " " + impIVA;
+        //imprimo los resultados...
+        var TotalFinal = SubTotal + totalEnvio + impIVA;
+        Total.innerHTML = `U$` + " " + TotalFinal;
+    });
+    //eliminar producto de la tabla...
+    var tbodyArt = document.getElementById("tbody");
+    var eliminarArt = document.getElementById("eliminar-Art");
+    eliminarArt.addEventListener("click", function () {
+        //alerta personalizada con SweetsAlerts...
+        Swal.fire({
+            title: '¿Estas seguro de eliminar el artículo?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, elimínelo!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Eliminado!',
+                    'El artículo ha sido eliminado, pero no se lamente y vaya por otro.',
+                    'success'
+                )
+                //si hay "OK" del user se elimina el artículo...
+                $("#articulo").remove();
+
+            }
+        })
+        // carritoVacio();
+    });
+    //evento al clickear en "Realizar compra"...
+    let comprar = document.getElementById("btn-comprar");
+    let inputs = document.querySelectorAll("#formulario-tarjeta input");
+    let numeroTarjeta = document.getElementById("inputNumero").value;
+    let nombreTarjeta = document.getElementById("inputNombre").value;
+    let ccv = document.getElementById("inputCCV").value;
+    comprar.addEventListener("click", function () {
+
+        if (numeroTarjeta != "" && nombreTarjeta != "" && ccv != "") {
+            return false
+        } else {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Tu compra ha sido realizada con éxito. !!Muchas gracias!!',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
-
-
-    })
+    });
 });
 
 
+//función que se ejecuta si no hay artículos en el carrito...
+
+// function carritoVacio() {
+//     let htmlContentToAppend = "";
+
+//     if (articles.data.length === 0) {
+//         htmlContentToAppend += `
+//       <tr>
+//         <td colspan="4">
+//           <div>
+//               <i class="fas fa-shopping-cart cart"></i>
+//               <p>No hay elementos aquí, vaya a gastar un poco de plata...!</p>
+//               <a href="inicio.html" id="btnInicio">Volver al inicio</a>
+//           </div>
+//         </td>
+//       </tr>
+//       `
+//         document.getElementById("tbody").innerHTML = htmlContentToAppend;
+
+//funcion que se ejecuta al agregar un producto al carrito desde product-info...
+
+//creo un array con el nuevo artículo...
+var miObjeto = new Object();
+miObjeto.name = "Chevrolet Onix Joy";
+miObjeto.count = 1;
+miObjeto.unitCost = 13500;
+miObjeto.currency = "USD";
+miObjeto.src = "img/prod1.jpg";
+
+var myString = JSON.stringify(miObjeto);
 
 
-//funcion que se ejecuta cuando se hace click en el boton aceptar
-function btnAceptar() {
-
-    document.getElementById("calle").value = "";
-    document.getElementById("numeroL").value = "";
-    document.getElementById("esquina").value = "";
-    document.getElementById("detalleCompra").innerHTML = '';
-    document.getElementById("subtotalText").innerHTML = 0;
-    document.getElementById("envioText").innerHTML = 0;
-    document.getElementById("totalCostText").innerHTML = 0;
-    document.getElementById("cantidad-Art").value = 0;
-    document.getElementById("cantidad-Art2").value = 0;
-    document.getElementById("subTotal-Art").innerHTML = 0;
-    document.getElementById("subTotal-Art2").innerHTML = 0;
 
 
 
+
+
+
+
+
+
+
+
+
+
+//Modal de la tarjeta
+
+const tarjeta = document.querySelector('#tarjeta'),
+    btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
+    formulario = document.querySelector('#formulario-tarjeta'),
+    numeroTarjeta = document.querySelector('#tarjeta .numero'),
+    nombreTarjeta = document.querySelector('#tarjeta .nombre'),
+    logoMarca = document.querySelector('#logo-marca'),
+    firma = document.querySelector('#tarjeta .firma p'),
+    mesExpiracion = document.querySelector('#tarjeta .mes'),
+    yearExpiracion = document.querySelector('#tarjeta .year');
+ccv = document.querySelector('#tarjeta .ccv');
+
+// * Volteamos la tarjeta para mostrar el frente.
+const mostrarFrente = () => {
+    if (tarjeta.classList.contains('active')) {
+        tarjeta.classList.remove('active');
+    }
 }
+
+// * Rotacion de la tarjeta
+tarjeta.addEventListener('click', () => {
+    tarjeta.classList.toggle('active');
+});
+
+// * Boton de abrir formulario
+btnAbrirFormulario.addEventListener('click', () => {
+    btnAbrirFormulario.classList.toggle('active');
+    formulario.classList.toggle('active');
+});
+
+// * Select del mes generado dinamicamente.
+for (let i = 1; i <= 12; i++) {
+    let opcion = document.createElement('option');
+    opcion.value = i;
+    opcion.innerText = i;
+    formulario.selectMes.appendChild(opcion);
+}
+
+// * Select del año generado dinamicamente.
+const yearActual = new Date().getFullYear();
+for (let i = yearActual; i <= yearActual + 8; i++) {
+    let opcion = document.createElement('option');
+    opcion.value = i;
+    opcion.innerText = i;
+    formulario.selectYear.appendChild(opcion);
+}
+
+// * Input numero de tarjeta
+formulario.inputNumero.addEventListener('keyup', (e) => {
+    let valorInput = e.target.value;
+
+    formulario.inputNumero.value = valorInput
+        // Eliminamos espacios en blanco
+        .replace(/\s/g, '')
+        // Eliminar las letras
+        .replace(/\D/g, '')
+        // Ponemos espacio cada cuatro numeros
+        .replace(/([0-9]{4})/g, '$1 ')
+        // Elimina el ultimo espaciado
+        .trim();
+
+    numeroTarjeta.textContent = valorInput;
+
+    if (valorInput == '') {
+        numeroTarjeta.textContent = '#### #### #### ####';
+
+        logoMarca.innerHTML = '';
+    }
+
+    if (valorInput[0] == 4) {
+        logoMarca.innerHTML = '';
+        const imagen = document.createElement('img');
+        imagen.src = 'img/logos/visa.png';
+        logoMarca.appendChild(imagen);
+    } else if (valorInput[0] == 5) {
+        logoMarca.innerHTML = '';
+        const imagen = document.createElement('img');
+        imagen.src = 'img/logos/mastercard.png';
+        logoMarca.appendChild(imagen);
+    }
+
+    // Volteamos la tarjeta para que el usuario vea el frente.
+    mostrarFrente();
+});
+
+// * Input nombre de tarjeta
+formulario.inputNombre.addEventListener('keyup', (e) => {
+    let valorInput = e.target.value;
+
+    formulario.inputNombre.value = valorInput.replace(/[0-9]/g, '');
+    nombreTarjeta.textContent = valorInput;
+    firma.textContent = valorInput;
+
+    if (valorInput == '') {
+        nombreTarjeta.textContent = 'Jhon Doe';
+    }
+
+    mostrarFrente();
+});
+
+// * Select mes
+formulario.selectMes.addEventListener('change', (e) => {
+    mesExpiracion.textContent = e.target.value;
+    mostrarFrente();
+});
+
+// * Select Año
+formulario.selectYear.addEventListener('change', (e) => {
+    yearExpiracion.textContent = e.target.value.slice(2);
+    mostrarFrente();
+});
+
+// * CCV
+formulario.inputCCV.addEventListener('keyup', () => {
+    if (!tarjeta.classList.contains('active')) {
+        tarjeta.classList.toggle('active');
+    }
+
+    formulario.inputCCV.value = formulario.inputCCV.value
+        // Eliminar los espacios
+        .replace(/\s/g, '')
+        // Eliminar las letras
+        .replace(/\D/g, '');
+
+    ccv.textContent = formulario.inputCCV.value;
+});
