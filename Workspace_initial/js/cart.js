@@ -1,10 +1,7 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-
 var articles = {};
 
 document.addEventListener("DOMContentLoaded", function (e) {
+    //traigo los datos guardados en un JSON y los guardo e imprimo en HTML...
     getJSONData(CART_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             articles = resultObj.data.articles[0];
@@ -32,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         var subTFinal = document.getElementById("subtotalText");
         var Total = document.getElementById("totalCostText");
 
-        //imprimo los resultados...
+        //imprimo los resultados de subTotal de la tabla...
         subTFinal.innerHTML = `U$` + " " + SubTotal;
         seleccionEnvio();
 
@@ -58,19 +55,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
             } else {
                 totalEnvio = 0;
             }
-
+            //imprimo los resultados de costo de envío de la tabla...
             document.getElementById("envioText").innerHTML = `U$` + " " + totalEnvio;
         };
-
+        //calculo el IVA en base al subTotal del artículo...
         var iva = document.getElementById("textIVA");
         impIVA = Math.round(SubTotal * 0.22);
-        document.getElementById("textIVA").innerHTML = `U$` + " " + impIVA;
+        iva.innerHTML = `U$` + " " + impIVA;
         //imprimo los resultados...
         var TotalFinal = SubTotal + totalEnvio + impIVA;
         Total.innerHTML = `U$` + " " + TotalFinal;
     });
     //eliminar producto de la tabla...
-    var tbodyArt = document.getElementById("tbody");
     var eliminarArt = document.getElementById("eliminar-Art");
     eliminarArt.addEventListener("click", function () {
         //alerta personalizada con SweetsAlerts...
@@ -96,28 +92,48 @@ document.addEventListener("DOMContentLoaded", function (e) {
         })
         // carritoVacio();
     });
-    //evento al clickear en "Realizar compra"...
-    let comprar = document.getElementById("btn-comprar");
-    let inputs = document.querySelectorAll("#formulario-tarjeta input");
-    let numeroTarjeta = document.getElementById("inputNumero").value;
-    let nombreTarjeta = document.getElementById("inputNombre").value;
-    let ccv = document.getElementById("inputCCV").value;
-    comprar.addEventListener("click", function () {
-
-        if (numeroTarjeta != "" && nombreTarjeta != "" && ccv != "") {
-            return false
-        } else {
+    //evento que se activa al dar click "Realizar pago"...
+    document.getElementById("formulario-tarjeta").addEventListener("submit", validarFormulario);
+    function validarFormulario(e) {
+        e.preventDefault();
+        let numeroTarjeta = document.getElementById("inputNumero").value;
+        let nombreTarjeta = document.getElementById("inputNombre").value;
+        let ccv = document.getElementById("inputCCV").value;
+        if (numeroTarjeta.length < 12) {
             Swal.fire({
                 position: 'center',
-                icon: 'success',
-                title: 'Tu compra ha sido realizada con éxito. !!Muchas gracias!!',
+                icon: 'error',
+                title: 'Debe ingresar 12 dígitos de la tarjeta.',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 2000
+            })
+        } else if (nombreTarjeta.length === 0) {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Debe ingresar el nombre del títular de la tarjeta.',
+                showConfirmButton: false,
+                timer: 2000
+            })
+        } else if (ccv.length === 0) {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Debe ingresar el código de seguridad de la tarjeta.',
+                showConfirmButton: false,
+                timer: 2000
             })
         }
-    });
-});
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Su compra ha sido realizada con éxito!!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
 
+});
 
 //función que se ejecuta si no hay artículos en el carrito...
 

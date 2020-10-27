@@ -67,11 +67,31 @@
   </nav>
   <!--Inicio del Contenido de la página-->
   <main role="main" class="main">
-    <section class="jumbotron text-center">
-      <div class="m-5">
-        <h1></h1>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="10000">
+          <a href="categories.html"><img src="img/portada-11.jpg" class="d-block w-100" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+          <a href="categories.html"><img src="img/portada-5.png" class="d-block w-100" alt="foto-cyber-monday"></a>
+        </div>
+        <div class="carousel-item">
+          <a href="categories.html"><img src="img/portada-9.jpg" class="d-block w-100" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+          <a href="categories.html"><img src="img/novo-onix-premier-1.jpg" class="d-block w-100" alt="..."></a>
+        </div>
       </div>
-    </section>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
@@ -161,11 +181,60 @@
       <p>
         Clickea
         <a id="a-footer" target="_blank" href="Letra.pdf">aquí</a> para
-        descargar la letra del obligatorio.
+        descargar la letra del obligatorio. Y <a id="a-footer" data-toggle="modal"
+          data-target="#modalterms-conditions">aquí</a> para
+        ver los
+        Términos y Condiciones del sitio web.
       </p>
     </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modalterms-conditions">
+      <div class=" modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">POLÍTICA DE PRIVACIDAD</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>El presente Política de Privacidad establece los términos en que e-MERCADO usa y protege la información
+              que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida
+              con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal
+              con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los
+              términos de este documento.</p>
+            <p><strong>Información que es recogida</strong></p>
+            <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto
+              como&nbsp; su dirección de correo electrónica e información demográfica. Así mismo cuando sea necesario
+              podrá ser requerida información específica para procesar algúna simulación.</p>
+            <p><strong>Uso de la información recogida</strong></p>
+            <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible,
+              particularmente para mantener un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros
+              productos y servicios.</p>
+            <p>e-MERCADO está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+              Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún
+              acceso no autorizado.</p>
+            <p><strong>Enlaces a Terceros</strong></p>
+            <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted
+              de clic en estos enlaces y abandone nuestra página, ya no tenemos control sobre al sitio al que es
+              redirigido y por lo tanto no somos responsables de los términos o privacidad ni de la protección de sus
+              datos en esos otros sitios terceros.<br>Dichos sitios están sujetos a sus propias políticas de privacidad
+              por
+              lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.</p>
+            <p><strong>Control de su información personal</strong></p>
+            <p>En cualquier momento usted puede restringir la recopilación o el uso de la información personal que es
+              proporcionada a nuestro sitio web.&nbsp; Cada vez que se le solicite rellenar un formulario, como el de
+              alta de usuario, puede marcar o desmarcar la opción de recibir información por correo electrónico.</p>
+            <p><strong>Esta web es una herramienta generada para fines estrictamente educativos. Cabe aclarar nuevamente
+                que no genera compras o ventas reales a terceros.<br>
+                Tampoco administra datos personales o de clientes.<br>
+                Todo lo generado en este dominio no tiene validez comercial.<strong></p><br><br>
+            <p>Plan Ceibal 2020 - Jóvenes a Programar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
-  <script src="https://kit.fontawesome.com/f92d31b3ce.js" crossorigin="anonymous"></script>
+  <script src=" https://kit.fontawesome.com/f92d31b3ce.js" crossorigin="anonymous"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
