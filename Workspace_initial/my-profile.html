@@ -87,17 +87,109 @@
     </div>
   </nav>
   <!--Inicio del Contenido de la página-->
-  <div class="container p-5">
-
-  </div>
-  <footer class="text-muted bg-light" id="bg-footer">
+  <main class="container p-5">
+    <!--Título-->
+    <div class="text-center p-4">
+      <h2>Mi Perfil</h2>
+      <p class="lead">Aquí podrá ver y modificar sus datos.</p>
+    </div>
+    <form action="">
+      <div class="form-Perfil">
+        <div class="gUno">
+          <div class="pName field">
+            <input type="text" id="name" placeholder="Ingrese su primer nombre" required autocomplete="off"
+              maxlength="15">
+            <label for="name" class="hover-border">Primer nombre*</label>
+          </div>
+          <div class="pApellido field">
+            <input type="text" id="surname" placeholder="Ingrese su primer apellido" required autocomplete="off"
+              maxlength="20">
+            <label for="surname" class="hover-border">Primer apellido*</label>
+          </div>
+          <div class="email field">
+            <input type="email" id="email" placeholder="ejemplo@ejemplo.com" required autocomplete="off"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <label for="email" class="hover-border">Email*</label>
+          </div>
+        </div>
+        <div class="gDos">
+          <div class="sName field">
+            <input type="text" id="middleName" placeholder="Ingrese su segundo nombre" autocomplete="off"
+              maxlength="15">
+            <label for="middleName" class="hover-border">Segundo nombre</label>
+          </div>
+          <div class="sApellido field">
+            <input type="text" id="secondSurname" placeholder="Ingrese su segundo apellido" autocomplete="off"
+              maxlength="20">
+            <label for="secondSurname" class="hover-border">Segundo apellido</label>
+          </div>
+          <div class="Tel field">
+            <input type="tel" id="tel" placeholder="09X XXX XXX" required autocomplete="off" maxlength="11">
+            <label for="tel" class="hover-border">Teléfono de contacto*</label>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <button type="submit" class="btn-Fperfil">Guardar cambios</button>
+    </form>
+  </main>
+  <footer class="text-muted" id="bg-footer">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>
         Clickea
         <a id="a-footer" target="_blank" href="Letra.pdf">aquí</a> para
-        descargar la letra del obligatorio.
+        descargar la letra del obligatorio. Y <a id="a-footer" data-toggle="modal"
+          data-target="#modalterms-conditions">aquí</a> para
+        ver los
+        Términos y Condiciones del sitio web.
       </p>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modalterms-conditions">
+      <div class=" modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">POLÍTICA DE PRIVACIDAD</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>El presente Política de Privacidad establece los términos en que e-MERCADO usa y protege la información
+              que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida
+              con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal
+              con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los
+              términos de este documento.</p>
+            <p><strong>Información que es recogida</strong></p>
+            <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto
+              como&nbsp; su dirección de correo electrónica e información demográfica. Así mismo cuando sea necesario
+              podrá ser requerida información específica para procesar algúna simulación.</p>
+            <p><strong>Uso de la información recogida</strong></p>
+            <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible,
+              particularmente para mantener un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros
+              productos y servicios.</p>
+            <p>e-MERCADO está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+              Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún
+              acceso no autorizado.</p>
+            <p><strong>Enlaces a Terceros</strong></p>
+            <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted
+              de clic en estos enlaces y abandone nuestra página, ya no tenemos control sobre al sitio al que es
+              redirigido y por lo tanto no somos responsables de los términos o privacidad ni de la protección de sus
+              datos en esos otros sitios terceros.<br>Dichos sitios están sujetos a sus propias políticas de privacidad
+              por
+              lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.</p>
+            <p><strong>Control de su información personal</strong></p>
+            <p>En cualquier momento usted puede restringir la recopilación o el uso de la información personal que es
+              proporcionada a nuestro sitio web.&nbsp; Cada vez que se le solicite rellenar un formulario, como el de
+              alta de usuario, puede marcar o desmarcar la opción de recibir información por correo electrónico.</p>
+            <p><strong>Esta web es una herramienta generada para fines estrictamente educativos. Cabe aclarar nuevamente
+                que no genera compras o ventas reales a terceros.<br>
+                Tampoco administra datos personales o de clientes.<br>
+                Todo lo generado en este dominio no tiene validez comercial.<strong></p><br><br>
+            <p>Plan Ceibal 2020 - Jóvenes a Programar.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
