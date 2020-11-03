@@ -93,40 +93,31 @@
       <h2>Mi Perfil</h2>
       <p class="lead">Aquí podrá ver y modificar sus datos.</p>
     </div>
-    <form action="">
-      <div class="form-Perfil">
-        <div class="gUno">
-          <div class="pName field">
-            <input type="text" id="name" placeholder="Ingrese su primer nombre" required autocomplete="off"
-              maxlength="15">
-            <label for="name" class="hover-border">Primer nombre*</label>
-          </div>
-          <div class="pApellido field">
-            <input type="text" id="surname" placeholder="Ingrese su primer apellido" required autocomplete="off"
-              maxlength="20">
-            <label for="surname" class="hover-border">Primer apellido*</label>
-          </div>
-          <div class="email field">
-            <input type="email" id="email" placeholder="ejemplo@ejemplo.com" required autocomplete="off"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <label for="email" class="hover-border">Email*</label>
-          </div>
+    <form action="" class="form-Perfil">
+      <div class="formImg-user">
+        <img src="img/profile.jpg" alt="">
+      </div>
+      <div class="gUno">
+        <div class="pName field">
+          <input type="text" id="name" placeholder="Ingrese su primer nombre" required autocomplete="off"
+            maxlength="15">
+          <label for="name" class="hover-border">Nombre*</label>
         </div>
-        <div class="gDos">
-          <div class="sName field">
-            <input type="text" id="middleName" placeholder="Ingrese su segundo nombre" autocomplete="off"
-              maxlength="15">
-            <label for="middleName" class="hover-border">Segundo nombre</label>
-          </div>
-          <div class="sApellido field">
-            <input type="text" id="secondSurname" placeholder="Ingrese su segundo apellido" autocomplete="off"
-              maxlength="20">
-            <label for="secondSurname" class="hover-border">Segundo apellido</label>
-          </div>
-          <div class="Tel field">
-            <input type="tel" id="tel" placeholder="09X XXX XXX" required autocomplete="off" maxlength="11">
-            <label for="tel" class="hover-border">Teléfono de contacto*</label>
-          </div>
+        <div class="email field">
+          <input type="email" id="email" placeholder="ejemplo@ejemplo.com" required autocomplete="off"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          <label for="email" class="hover-border">Email*</label>
+        </div>
+      </div>
+      <div class="gDos">
+        <div class="pApellido field">
+          <input type="text" id="surname" placeholder="Ingrese su primer apellido" required autocomplete="off"
+            maxlength="20">
+          <label for="surname" class="hover-border">Apellido*</label>
+        </div>
+        <div class="Tel field">
+          <input type="tel" id="tel" placeholder="09X XXX XXX" required autocomplete="off" maxlength="11">
+          <label for="tel" class="hover-border">Teléfono de contacto*</label>
         </div>
       </div>
       <hr>
