@@ -703,37 +703,16 @@ input[type="radio"]:checked~label {
 
 /* ----- </Botón cerca del Footer ----- */
 
-/* ----- FOOTER ----- */
-
-footer {
-  /* display: block; */
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-footer p {
-  color: cadetblue !important;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-#a-footer {
-  color: #fff !important;
-}
-
-#bg-footer {
-  background-color: #344059 !important;
-}
-
-#modalterms-conditions p {
-  color: #000 !important;
-  font-family: "Raleway", serif;
-}
-
 /* ----- CARRITO ----- */
 
 #container-principal {
   position: relative;
+}
+
+.inpCant {
+  border: 2px solid #CED6E0;
+  outline: none;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 .table-art {
@@ -742,7 +721,8 @@ footer p {
   max-width: 800px;
   border-collapse: collapse;
   border: solid 1px #a6033f;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 .table-art .thead {
@@ -825,6 +805,10 @@ tbody tr, tbody td {
 
 .tipo-envio {
   width: 30%;
+}
+
+#labelRadio {
+  color: #343a40 !important;
 }
 
 #t-configEnvio {
@@ -1504,3 +1488,32 @@ input:not(:placeholder-shown)+label {
     cursor: pointer;
   }
 }
+
+/* ----- FOOTER ----- */
+
+footer {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+footer p {
+  color: cadetblue !important;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+#a-footer {
+  color: #fff !important;
+}
+
+#bg-footer {
+  background-color: #344059 !important;
+}
+
+#modalterms-conditions p {
+  color: #000 !important;
+  font-family: "Raleway", serif;
+}
+
+/* ----- </Footer ----- */
