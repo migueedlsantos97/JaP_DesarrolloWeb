@@ -49,4 +49,13 @@ var getJSONData = function (url) {
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {});
+document.addEventListener("DOMContentLoaded", function (e) {
+
+  function toggleMenu() {
+    var menuToggle = document.querySelector('.toggle');
+    var menu = document.querySelector('.list');
+    menuToggle.classList.toggle('active');
+    menu.classList.toggle('active');
+  }
+
+});
